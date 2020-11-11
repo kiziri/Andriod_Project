@@ -11,7 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Andriod_Project">
+<<<<<<< HEAD
         <activity android:name=".MainHomeActivity"></activity>
+=======
+        <activity android:name=".StroyModeActivity"></activity>
+>>>>>>> layout
         <activity android:name=".ChallengeAreaActivity" />
         <activity android:name=".StudyAreaActivity" />
         <activity android:name=".ModeSelectionActivity" />
