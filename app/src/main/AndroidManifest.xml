@@ -11,8 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Andriod_Project">
-        <activity android:name=".MainHomeActivity"></activity>
-        <activity android:name=".StroyModeActivity"></activity>
+        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".MainHomeActivity" />
+        <activity android:name=".StroyModeActivity" />
         <activity android:name=".ChallengeAreaActivity" />
         <activity android:name=".StudyAreaActivity" />
         <activity android:name=".ModeSelectionActivity" />
