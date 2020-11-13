@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Andriod_Project">
         <activity android:name=".ChallengeModeActivity"></activity>
+        <activity android:name=".JoinActivity"></activity>
         <activity android:name=".LoginActivity" />
         <activity android:name=".MainHomeActivity" />
         <activity android:name=".StroyModeActivity" />
