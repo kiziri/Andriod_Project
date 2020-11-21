@@ -10,16 +10,17 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Andriod_Project">
+        android:theme="@style/Theme.Andriod_Project"
+        android:usesCleartextTraffic="true">
         <activity android:name=".ChallengeModeActivity"></activity>
         <activity android:name=".JoinActivity"></activity>
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".MainHomeActivity" />
         <activity android:name=".StroyModeActivity" />
         <activity android:name=".ChallengeAreaActivity" />
         <activity android:name=".StudyAreaActivity" />
         <activity android:name=".ModeSelectionActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
