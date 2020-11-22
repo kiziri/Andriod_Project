@@ -1,53 +1,172 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center_horizontal"
-    android:orientation="vertical"
-    android:padding="30sp"
+    android:layout_height="match_parent"
+    android:background="@drawable/thumb_l_21D2E858EBBA11AC602999F41B89D29C"
     tools:context=".JoinActivity">
 
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="112dp"
+        android:gravity="center"
+        android:text=" 말랑말랑"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="220dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
+        android:text="두뇌 트레이닝"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/button7"
+        android:layout_width="130dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/design_default_color_background"
+        android:backgroundTintMode="multiply"
+        android:gravity="center"
+        android:text="E-amil"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/button8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.092"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.951" />
+
+    <TextView
+        android:id="@+id/button8"
+        android:layout_width="130dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="116dp"
+        android:backgroundTint="@color/material_on_surface_disabled"
+        android:gravity="center"
+        android:text="Password"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="@+id/button7"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/button7"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/button9"
+        android:layout_width="130dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@color/material_on_surface_disabled"
+        android:gravity="center"
+        android:text="이름"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="@+id/button8"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/button8"
+        app:layout_constraintTop_toBottomOf="@+id/button8" />
+
+    <TextView
+        android:id="@+id/button10"
+        android:layout_width="130dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@color/material_on_surface_disabled"
+        android:gravity="center"
+        android:text="닉네임"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="@+id/button9"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/button9"
+        app:layout_constraintTop_toBottomOf="@+id/button9" />
+
     <EditText
         android:id="@+id/edtEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="210dp"
+        android:layout_height="60dp"
+        android:background="@drawable/edit_round"
+        android:hint=" Email"
         android:inputType="textEmailAddress"
-        android:hint="Email" />
+        app:layout_constraintBottom_toBottomOf="@+id/button7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button7"
+        app:layout_constraintTop_toTopOf="@+id/button7" />
 
     <EditText
         android:id="@+id/edtPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Password"
-        android:inputType="textPassword" />
+        android:layout_width="210dp"
+        android:layout_height="60dp"
+        android:background="@drawable/edit_round"
+        android:inputType="textPassword"
+        android:hint=" 6~16자 영문,숫자,특수기호"
+        app:layout_constraintBottom_toBottomOf="@+id/button8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button8"
+        app:layout_constraintTop_toTopOf="@+id/button8" />
 
     <EditText
         android:id="@+id/edtName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Name"
-        android:inputType="text" />
+        android:layout_width="210dp"
+        android:layout_height="60dp"
+        android:background="@drawable/edit_round"
+        android:layout_marginStart="150dp"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="@+id/button9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.12"
+        app:layout_constraintStart_toStartOf="@+id/button9"
+        app:layout_constraintTop_toTopOf="@+id/button9"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/edtNickname"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Nickname"
-        android:inputType="text" />
+        android:layout_width="210dp"
+        android:layout_height="60dp"
+        android:inputType="text"
+        android:background="@drawable/edit_round"
+        app:layout_constraintBottom_toBottomOf="@+id/button10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintStart_toEndOf="@+id/button10"
+        app:layout_constraintTop_toTopOf="@+id/button10"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/btnRegister"
+        android:layout_width="157dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="28dp"
+        android:hint="Register"
         android:onClick="userSystem"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Register" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button10" />
 
     <Button
         android:id="@+id/btnCancel"
+        android:layout_width="157dp"
+        android:layout_height="48dp"
+        android:hint="Cancel"
         android:onClick="userSystem"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Cancel" />
-</LinearLayout>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnRegister"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
