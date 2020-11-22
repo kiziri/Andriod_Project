@@ -12,15 +12,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Andriod_Project"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ChallengeModeActivity"></activity>
-        <activity android:name=".LoginActivity"></activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".LoginSelectActivity"></activity>
+        <activity android:name=".ChallengeModeActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".JoinActivity" />
         <activity android:name=".MainHomeActivity" />
         <activity android:name=".StroyModeActivity" />
         <activity android:name=".ChallengeAreaActivity" />
         <activity android:name=".StudyAreaActivity" />
         <activity android:name=".ModeSelectionActivity" />
-        <activity android:name=".JoinActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
