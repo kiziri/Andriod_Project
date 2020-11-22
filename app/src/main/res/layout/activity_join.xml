@@ -6,7 +6,7 @@
     android:layout_gravity="center_horizontal"
     android:orientation="vertical"
     android:padding="30sp"
-    tools:context=".LoginActivity">
+    tools:context=".JoinActivity">
 
 
     <EditText

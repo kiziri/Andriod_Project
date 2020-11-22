@@ -13,14 +13,14 @@
         android:theme="@style/Theme.Andriod_Project"
         android:usesCleartextTraffic="true">
         <activity android:name=".ChallengeModeActivity"></activity>
-        <activity android:name=".JoinActivity"></activity>
+        <activity android:name=".LoginActivity"></activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".MainHomeActivity" />
         <activity android:name=".StroyModeActivity" />
         <activity android:name=".ChallengeAreaActivity" />
         <activity android:name=".StudyAreaActivity" />
         <activity android:name=".ModeSelectionActivity" />
-        <activity android:name=".LoginActivity">
+        <activity android:name=".JoinActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
