@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1FFFFFFF">
+
+    <TextView
+        android:id="@+id/rankingNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="#FFFFFF"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="1"
+        android:textColor="#0F52F8"
+        android:textColorHighlight="#FFEB3B"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/nickName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="#FFFFFF"
+        android:text="Nickname"
+        android:textColor="#000000"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/rankPoint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="#FFFFFF"
+        android:text="Rankpoint"
+        android:textColor="#1FFFEC"
+        android:textSize="20sp" />
+</LinearLayout>
