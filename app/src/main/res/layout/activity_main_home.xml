@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/mainHomeLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,6 +10,7 @@
 
     <ImageView
         android:id="@+id/profileImgVIew"
+        android:onClick="mainHomeSystem"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginLeft="10dp"
@@ -19,6 +22,7 @@
 
     <TextView
         android:id="@+id/userNicknameTxtView"
+        android:onClick="mainHomeSystem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
@@ -80,7 +84,7 @@
 
     <Button
         android:id="@+id/storyBtn"
-        android:onClick="gameModeSelectSystem"
+        android:onClick="mainHomeSystem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="40dp"
@@ -93,7 +97,7 @@
 
     <Button
         android:id="@+id/challengeBtn"
-        android:onClick="gameModeSelectSystem"
+        android:onClick="mainHomeSystem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="40dp"
@@ -106,7 +110,7 @@
 
     <Button
         android:id="@+id/studyBtn"
-        android:onClick="gameModeSelectSystem"
+        android:onClick="mainHomeSystem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="40dp"
@@ -116,6 +120,4 @@
         app:layout_constraintTop_toBottomOf="@id/challengeBtn"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
