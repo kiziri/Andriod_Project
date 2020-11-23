@@ -1,4 +1,4 @@
-package com.example.andriod_project;
+package com.example.andriod_project.models;
 
 public class ItemData {
     public String strRanking;

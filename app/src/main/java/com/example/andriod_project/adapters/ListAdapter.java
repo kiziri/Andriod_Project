@@ -1,16 +1,14 @@
-package com.example.andriod_project;
+package com.example.andriod_project.adapters;
 
-import android.content.ClipData;
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.example.rankingactivity.ItemData;
-import com.example.rankingactivity.R;
+import com.example.andriod_project.models.ItemData;
+import com.example.andriod_project.R;
 
 import java.util.ArrayList;
 

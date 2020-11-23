@@ -1,4 +1,4 @@
-package com.example.andriod_project;
+package com.example.andriod_project.models;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

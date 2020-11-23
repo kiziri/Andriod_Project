@@ -1,4 +1,4 @@
-package com.example.andriod_project;
+package com.example.andriod_project.views;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +9,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.andriod_project.R;
+import com.example.andriod_project.models.RemoteService;
+import com.example.andriod_project.models.UserVO;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -21,7 +24,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-import static com.example.andriod_project.RemoteService.BASE_URL;
+import static com.example.andriod_project.models.RemoteService.BASE_URL;
 
 public class JoinActivity extends AppCompatActivity {
 

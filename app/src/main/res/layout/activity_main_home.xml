@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainHomeActivity">
+    tools:context=".views.MainHomeActivity">
 
     <ImageView
         android:id="@+id/profileImgVIew"
@@ -76,8 +76,7 @@
         android:text="두뇌 트레이닝"
         android:textSize="50dp"
         android:layout_marginTop="5dp"
-        app:layout_constraintTop_toBottomOf="@+id/titleTxtView1"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/titleTxtView1" />
 
     <Button
         android:id="@+id/storyBtn"

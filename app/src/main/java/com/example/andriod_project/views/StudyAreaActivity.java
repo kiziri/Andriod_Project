@@ -1,14 +1,16 @@
-package com.example.andriod_project;
+package com.example.andriod_project.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class ModeSelectionActivity extends AppCompatActivity {
+import com.example.andriod_project.R;
+
+public class StudyAreaActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mode_selection);
+        setContentView(R.layout.activity_study_area);
     }
 }

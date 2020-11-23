@@ -12,17 +12,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Andriod_Project"
         android:usesCleartextTraffic="true">
-        <activity android:name=".RankingActivity"></activity>
-        <activity android:name=".LoginSelectActivity" />
+        <activity android:name=".views.RankingActivity"></activity>
+        <activity android:name=".views.LoginSelectActivity" />
         <activity android:name=".ChallengeModeActivity" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".JoinActivity" />
-        <activity android:name=".MainHomeActivity" />
-        <activity android:name=".StroyModeActivity" />
-        <activity android:name=".ChallengeAreaActivity" />
-        <activity android:name=".StudyAreaActivity" />
-        <activity android:name=".ModeSelectionActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".views.LoginActivity" />
+        <activity android:name=".views.JoinActivity" />
+        <activity android:name=".views.MainHomeActivity" />
+        <activity android:name=".views.StroyModeActivity" />
+        <activity android:name=".views.ChallengeAreaActivity" />
+        <activity android:name=".views.StudyAreaActivity" />
+        <activity android:name=".views.ModeSelectionActivity" />
+        <activity android:name=".views.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

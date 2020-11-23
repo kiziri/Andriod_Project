@@ -1,21 +1,16 @@
-package com.example.story_mode;
+package com.example.andriod_project.adapters;
 
 import android.content.Context;
-import android.media.Image;
-import android.os.Bundle;
-import android.service.autofill.OnClickAction;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
+
+import com.example.andriod_project.R;
 
 public class Adapter extends PagerAdapter{
 

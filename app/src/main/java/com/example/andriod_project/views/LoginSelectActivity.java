@@ -1,4 +1,4 @@
-package com.example.andriod_project;
+package com.example.andriod_project.views;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.example.andriod_project.R;
 
 public class LoginSelectActivity extends AppCompatActivity {
     static final int ADD_NEW_USER = 1;

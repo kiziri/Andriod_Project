@@ -1,4 +1,4 @@
-package com.example.challenge_mode;
+package com.example.andriod_project.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,8 +9,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
+
+import com.example.andriod_project.R;
 
 public class chall_Adapter extends PagerAdapter {
 

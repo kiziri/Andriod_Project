@@ -1,20 +1,19 @@
-package com.example.story_mode;
+package com.example.andriod_project.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
-import android.content.Context;
-import android.media.Image;
-import android.media.audiofx.DynamicsProcessing;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-public class StoryModeActivty extends AppCompatActivity {
+import com.example.andriod_project.R;
+import com.example.andriod_project.adapters.chall_Adapter;
 
-    Adapter adapter;
+public class ChallengeModeActivity extends AppCompatActivity {
+
+    chall_Adapter adapter;
     ViewPager viewPager;
 
     @Override
@@ -22,15 +21,16 @@ public class StoryModeActivty extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ImageView back, home;
+        ImageView back, home, category;
 
-        //이미지 뷰 지정
+        //이미지뷰 지정
         back = (ImageView) findViewById(R.id.back);
         home = (ImageView) findViewById(R.id.home);
+        category = (ImageView) findViewById(R.id.category);
 
         //뷰페이저 설정
         viewPager = (ViewPager) findViewById(R.id.view);
-        adapter = new Adapter(this);
+        adapter = new chall_Adapter(this);
         viewPager.setAdapter(adapter);
 
         //각 이미지 뷰에 대한 클릭 리스너
@@ -49,6 +49,13 @@ public class StoryModeActivty extends AppCompatActivity {
                         Toast.LENGTH_SHORT).show();
             }
         });
+
+        category.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "분야선택 버튼 클릭",
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
-

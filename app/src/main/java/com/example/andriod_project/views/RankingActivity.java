@@ -1,20 +1,15 @@
-package com.example.andriod_project;
+package com.example.andriod_project.views;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Adapter;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.rankingactivity.R;
+import com.example.andriod_project.R;
+import com.example.andriod_project.adapters.ListAdapter;
+import com.example.andriod_project.models.ItemData;
 
 import java.util.ArrayList;
 
@@ -49,9 +44,9 @@ public class RankingActivity extends AppCompatActivity {
                 "오덕왕 부하6", "오덕왕 부하7", "오덕왕 부하8", "오덕왕 부하9"};
     
         //랭커 정보(등수, 닉네임, 점수) 차례대로 대입하는 부분
-        ArrayList<com.example.andriod_project.ItemData> oData = new ArrayList<>();
+        ArrayList<ItemData> oData = new ArrayList<>();
         for(int i = 0;i<10;++i){
-            com.example.andriod_project.ItemData oltem = new com.example.andriod_project.ItemData();
+            ItemData oltem = new ItemData();
             oltem.strRanking = ""+(i+1); //순위는 고정 1~10 차례대로
             oltem.strNickame = "닉네임" + (i+1); //데이터베이스에서 가져온 닉네임 넣는 부분
             oltem.strRankpoint = ""+(i+100); //데이터베이스에서 가져온 랭킹점수 넣는 부분

@@ -1,8 +1,10 @@
-package com.example.andriod_project;
+package com.example.andriod_project.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.andriod_project.R;
 
 public class ChallengeAreaActivity extends AppCompatActivity {
 
