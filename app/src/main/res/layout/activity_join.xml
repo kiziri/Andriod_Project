@@ -10,8 +10,8 @@
 
     <TextView
         android:id="@+id/titleTxtView1"
-        android:layout_width="150dp"
-        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="112dp"
         android:gravity="center"
         android:text=" 말랑말랑"
@@ -23,8 +23,8 @@
 
     <TextView
         android:id="@+id/titleTxtView2"
-        android:layout_width="220dp"
-        android:layout_height="64dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:gravity="center"
         android:text="두뇌 트레이닝"
@@ -35,20 +35,15 @@
 
     <TextView
         android:id="@+id/idTxtView"
-        android:layout_width="130dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="16dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:backgroundTint="@color/design_default_color_background"
         android:backgroundTintMode="multiply"
         android:gravity="center"
         android:text="E-amil"
         android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@+id/pwTxtView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.092"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleTxtView2"
-        app:layout_constraintVertical_bias="0.951" />
+        tools:layout_editor_absoluteX="40dp"
+        tools:layout_editor_absoluteY="250dp" />
 
     <TextView
         android:id="@+id/pwTxtView"
@@ -94,15 +89,14 @@
 
     <EditText
         android:id="@+id/edtEmail"
-        android:layout_width="210dp"
-        android:layout_height="60dp"
+        android:layout_width="209dp"
+        android:layout_height="46dp"
         android:background="@drawable/edit_round"
         android:hint=" Email"
         android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toBottomOf="@+id/idTxtView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/idTxtView"
-        app:layout_constraintTop_toTopOf="@+id/idTxtView" />
+        android:textSize="25dp"
+        tools:layout_editor_absoluteX="186dp"
+        tools:layout_editor_absoluteY="250dp" />
 
     <EditText
         android:id="@+id/edtPassword"
@@ -144,8 +138,8 @@
 
     <Button
         android:id="@+id/btnRegister"
-        android:layout_width="157dp"
-        android:layout_height="48dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:hint="Register"
         android:onClick="userSystem"
@@ -156,8 +150,8 @@
 
     <Button
         android:id="@+id/btnCancel"
-        android:layout_width="157dp"
-        android:layout_height="48dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:hint="Cancel"
         android:onClick="userSystem"
         app:layout_constraintBottom_toBottomOf="parent"

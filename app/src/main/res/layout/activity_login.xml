@@ -8,8 +8,8 @@
 
     <TextView
         android:id="@+id/titleTxtView1"
-        android:layout_width="150dp"
-        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="112dp"
         android:gravity="center"
         android:text=" 말랑말랑"
@@ -21,8 +21,8 @@
 
     <TextView
         android:id="@+id/titleTxtView2"
-        android:layout_width="220dp"
-        android:layout_height="64dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:gravity="center"
         android:text="두뇌 트레이닝"
@@ -33,8 +33,8 @@
 
     <TextView
         android:id="@+id/idTxtView"
-        android:layout_width="130dp"
-        android:layout_height="60dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:backgroundTint="@color/design_default_color_background"
         android:backgroundTintMode="multiply"
@@ -64,21 +64,25 @@
 
     <EditText
         android:id="@+id/idEdtTxt"
-        android:layout_width="210dp"
-        android:layout_height="60dp"
+        android:layout_width="222dp"
+        android:layout_height="37dp"
         app:layout_constraintBottom_toBottomOf="@+id/idTxtView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.869"
         app:layout_constraintStart_toEndOf="@+id/idTxtView"
-        app:layout_constraintTop_toTopOf="@+id/idTxtView" />
+        app:layout_constraintTop_toTopOf="@+id/idTxtView"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/pwEdtTxt"
-        android:layout_width="210dp"
-        android:layout_height="60dp"
+        android:layout_width="225dp"
+        android:layout_height="37dp"
         app:layout_constraintBottom_toBottomOf="@+id/pwTxtView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.656"
         app:layout_constraintStart_toEndOf="@+id/pwTxtView"
-        app:layout_constraintTop_toTopOf="@+id/pwTxtView" />
+        app:layout_constraintTop_toTopOf="@+id/pwTxtView"
+        app:layout_constraintVertical_bias="0.384" />
 
     <Button
         android:id="@+id/loginBtn"
