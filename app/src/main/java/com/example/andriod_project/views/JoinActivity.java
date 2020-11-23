@@ -107,16 +107,16 @@ public class JoinActivity extends AppCompatActivity {
         int userRankPoint = 0;
         int userSolveProblem = 0;
         int userCorrectProblem = 0;
-        userVO.setUserId(userEmail);
-        userVO.setUserPw(userPassword);
-        userVO.setUserName(userName);
-        userVO.setUserNickname(userNickname);
-        userVO.setUserRankPoint(userRankPoint);
-        userVO.setUserSolveProblem(userSolveProblem);
-        userVO.setUserCorrectProblem(userCorrectProblem);
+        userVO.setUserid(userEmail);
+        userVO.setUserpw(userPassword);
+        userVO.setUsername(userName);
+        userVO.setUsernickname(userNickname);
+        userVO.setUserrankpoint(userRankPoint);
+        userVO.setUsersolveproblem(userSolveProblem);
+        userVO.setUsercorrectproblem(userCorrectProblem);
 
-        Call<Void> call = remoteService.insertUser(userVO.getUserId(), userVO.getUserPw(), userVO.getUserName(), userVO.getUserNickname(),
-                userVO.getUserRankPoint(), userVO.getUserSolveProblem(), userVO.getUserCorrectProblem());
+        Call<Void> call = remoteService.insertUser(userVO.getUserid(), userVO.getUserpw(), userVO.getUsername(), userVO.getUsernickname(),
+                userVO.getUserrankpoint(), userVO.getUsersolveproblem(), userVO.getUsercorrectproblem());
 
         call.enqueue(new Callback<Void>() {
             @Override
