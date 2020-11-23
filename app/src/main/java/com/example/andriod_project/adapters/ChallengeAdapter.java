@@ -13,7 +13,7 @@ import androidx.viewpager.widget.PagerAdapter;
 
 import com.example.andriod_project.R;
 
-public class chall_Adapter extends PagerAdapter {
+public class ChallengeAdapter extends PagerAdapter {
 
     //이미지가 들어가는 배열
     int[] images = {R.drawable.easy_btn, R.drawable.normal_btn, R.drawable.hard_btn};
@@ -21,7 +21,7 @@ public class chall_Adapter extends PagerAdapter {
     private LayoutInflater inflater;
     private Context context;
 
-    public chall_Adapter(Context context){
+    public ChallengeAdapter(Context context){
         this.context = context;
     }
 

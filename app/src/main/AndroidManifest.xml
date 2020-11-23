@@ -14,12 +14,11 @@
         android:usesCleartextTraffic="true">
         <activity android:name=".views.RankingActivity"></activity>
         <activity android:name=".views.LoginSelectActivity" />
-        <activity android:name=".ChallengeModeActivity" />
+        <activity android:name=".views.ChallengeModeActivity" />
+        <activity android:name=".views.StoryModeActivity" />
         <activity android:name=".views.LoginActivity" />
         <activity android:name=".views.JoinActivity" />
         <activity android:name=".views.MainHomeActivity" />
-        <activity android:name=".views.StroyModeActivity" />
-        <activity android:name=".views.ChallengeAreaActivity" />
         <activity android:name=".views.StudyAreaActivity" />
         <activity android:name=".views.ModeSelectionActivity" />
         <activity android:name=".views.MainActivity">

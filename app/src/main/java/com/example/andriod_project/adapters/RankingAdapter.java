@@ -12,12 +12,12 @@ import com.example.andriod_project.R;
 
 import java.util.ArrayList;
 
-public class ListAdapter extends BaseAdapter {
+public class RankingAdapter extends BaseAdapter {
     LayoutInflater inflater = null;
     private ArrayList<ItemData> m_oData = null;
     private int nListCnt = 0;
 
-    public ListAdapter(ArrayList<ItemData> _oData){
+    public RankingAdapter(ArrayList<ItemData> _oData){
         m_oData = _oData;
         nListCnt = m_oData.size();
     }
