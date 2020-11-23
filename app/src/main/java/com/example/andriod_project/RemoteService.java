@@ -11,4 +11,8 @@ public interface RemoteService {
     @POST("insertUser.jsp")
     Call<Void> insertUser(@Query("userid") String userId, @Query("userpw") String userpw, @Query("username") String username, @Query("usernickname") String usernickname,
                             @Query("userrankpoint") int userrankpoint, @Query("usersolveproblem") int usersolveproblem, @Query("usercorrectproblem") int usercorrectproblem);
+
+    @GET("loginUser.jsp")
+    Call<UserVO> loginUser(@Query("userid") String userId);
+
 }

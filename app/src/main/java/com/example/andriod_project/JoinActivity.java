@@ -80,26 +80,26 @@ public class JoinActivity extends AppCompatActivity {
     }
 
     public void userRegister(String userEmail, String userPassword, String userName, String userNickname) {
-
-        userRegisterForMySQL(userEmail,userPassword,userName,userNickname);
-
         mAuth.createUserWithEmailAndPassword(userEmail, userPassword).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
                     user = mAuth.getCurrentUser();
-
-                    Toast.makeText(JoinActivity.this, "User Register Successful", Toast.LENGTH_SHORT).show();
+                    userRegisterForMySQL(userEmail,userPassword,userName,userNickname);
+                    setResult(RESULT_OK);
+                    System.out.println("------------추가 성공");
                 }
                 else {
-                    Toast.makeText(JoinActivity.this, "User register Failed", Toast.LENGTH_SHORT).show();
+                    setResult(RESULT_CANCELED);
+                    System.out.println("------------추가 실패");
                 }
+                finish();
             }
         });
     }
 
     public void userRegisterForMySQL(String userEmail, String userPassword, String userName, String userNickname) {
-        System.out.println("---------------\n메소드 호출 완료\n");
+
         UserVO userVO = new UserVO();
         int userRankPoint = 0;
         int userSolveProblem = 0;
@@ -112,18 +112,13 @@ public class JoinActivity extends AppCompatActivity {
         userVO.setUserSolveProblem(userSolveProblem);
         userVO.setUserCorrectProblem(userCorrectProblem);
 
-        System.out.println("---------------\n구동 확인 완료\n");
-
         Call<Void> call = remoteService.insertUser(userVO.getUserId(), userVO.getUserPw(), userVO.getUserName(), userVO.getUserNickname(),
                 userVO.getUserRankPoint(), userVO.getUserSolveProblem(), userVO.getUserCorrectProblem());
-
-        System.out.println("---------------\n구동 확인 완료\n");
-
 
         call.enqueue(new Callback<Void>() {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
-                System.out.println("---------------\n입력 완료\n");
+                System.out.println("---------------\n");
             }
             @Override
             public void onFailure(Call<Void> call, Throwable t) { }
