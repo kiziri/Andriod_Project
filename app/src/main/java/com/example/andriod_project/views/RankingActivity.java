@@ -8,7 +8,7 @@ import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.andriod_project.R;
-import com.example.andriod_project.adapters.ListAdapter;
+import com.example.andriod_project.adapters.RankingAdapter;
 import com.example.andriod_project.models.ItemData;
 
 import java.util.ArrayList;
@@ -20,7 +20,7 @@ public class RankingActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_ranking);
 
         ImageView backbtn = (ImageView) findViewById(R.id.backBtn);
         ImageView homebtn = (ImageView) findViewById(R.id.homeBtn);
@@ -56,7 +56,7 @@ public class RankingActivity extends AppCompatActivity {
 
         //Listview, Adapter 생성 및 연결
         listview = (ListView)findViewById(R.id.listView1);
-        ListAdapter adapter = new ListAdapter(oData);
+        RankingAdapter adapter = new RankingAdapter(oData);
         listview.setAdapter(adapter);
 
         //back버튼 누르면 다른 화면으로 전환

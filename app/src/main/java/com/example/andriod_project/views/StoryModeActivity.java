@@ -1,17 +1,17 @@
 package com.example.andriod_project.views;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.ViewPager;
-
 import com.example.andriod_project.R;
 import com.example.andriod_project.adapters.Adapter;
 
-public class StoryModeActivty extends AppCompatActivity {
+public class StoryModeActivity extends AppCompatActivity {
 
     Adapter adapter;
     ViewPager viewPager;
@@ -19,7 +19,7 @@ public class StoryModeActivty extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_story_mode);
 
         ImageView back, home;
 
@@ -50,4 +50,3 @@ public class StoryModeActivty extends AppCompatActivity {
         });
     }
 }
-

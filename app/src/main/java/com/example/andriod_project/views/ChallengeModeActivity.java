@@ -9,11 +9,11 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.andriod_project.R;
-import com.example.andriod_project.adapters.chall_Adapter;
+import com.example.andriod_project.adapters.ChallengeAdapter;
 
 public class ChallengeModeActivity extends AppCompatActivity {
 
-    chall_Adapter adapter;
+    ChallengeAdapter adapter;
     ViewPager viewPager;
 
     @Override
@@ -30,7 +30,7 @@ public class ChallengeModeActivity extends AppCompatActivity {
 
         //뷰페이저 설정
         viewPager = (ViewPager) findViewById(R.id.view);
-        adapter = new chall_Adapter(this);
+        adapter = new ChallengeAdapter(this);
         viewPager.setAdapter(adapter);
 
         //각 이미지 뷰에 대한 클릭 리스너
