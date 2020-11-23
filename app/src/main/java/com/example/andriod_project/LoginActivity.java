@@ -87,21 +87,15 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<UserVO> call, Response<UserVO> response) {
                 UserVO userVO = response.body();
-                String userId = userVO.getUserId();
-                String userName = userVO.getUserName();
-                String userNickname = userVO.getUserNickname();
-                int userRankPoint = userVO.getUserRankPoint();
-                int userSolveProblem = userVO.getUserSolveProblem();
-                int userCorrectProblem = userVO.getUserCorrectProblem();
 
                 System.out.println("---------------\n");
                 intent = new Intent(LoginActivity.this, MainHomeActivity.class);
-                intent.putExtra("userId", userId);
-                intent.putExtra("userName", userName);
-                intent.putExtra("userNickname", userNickname);
-                intent.putExtra("userRankPoint", userRankPoint);
-                intent.putExtra("userSolveProblem", userSolveProblem);
-                intent.putExtra("userCorrectProblem", userCorrectProblem);
+                intent.putExtra("userId", userVO.getUserId());
+                intent.putExtra("userName", userVO.getUserName());
+                intent.putExtra("userNickname", userVO.getUserNickname());
+                intent.putExtra("userRankPoint", userVO.getUserRankPoint());
+                intent.putExtra("userSolveProblem", userVO.getUserSolveProblem());
+                intent.putExtra("userCorrectProblem", userVO.getUserCorrectProblem());
                 startActivity(intent);
                 finish();
             }

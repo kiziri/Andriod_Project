@@ -9,10 +9,10 @@ public interface RemoteService {
     public static final String BASE_URL="http://192.168.1.9:8080/quizApp/";
 
     @POST("insertUser.jsp")
-    Call<Void> insertUser(@Query("userid") String userId, @Query("userpw") String userpw, @Query("username") String username, @Query("usernickname") String usernickname,
+    Call<Void> insertUser(@Query("userid") String userid, @Query("userpw") String userpw, @Query("username") String username, @Query("usernickname") String usernickname,
                             @Query("userrankpoint") int userrankpoint, @Query("usersolveproblem") int usersolveproblem, @Query("usercorrectproblem") int usercorrectproblem);
 
     @GET("loginUser.jsp")
-    Call<UserVO> loginUser(@Query("userid") String userId);
+    Call<UserVO> loginUser(@Query("userid") String userid);
 
 }

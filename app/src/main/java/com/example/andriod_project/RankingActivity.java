@@ -1,4 +1,4 @@
-package com.example.team_braintraining;
+package com.example.andriod_project;
 
 import android.content.Intent;
 import android.os.Bundle;

@@ -23,7 +23,7 @@
             android:duplicateParentState="false"
             android:paddingLeft="100dp"
             android:paddingRight="10dp"
-            app:srcCompat="@drawable/crown" />
+             />
 
         <TextView
             android:id="@+id/rankTitleText"
