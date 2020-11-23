@@ -35,13 +35,13 @@
         android:id="@+id/idTxtView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="56dp"
-        android:layout_marginTop="104dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="132dp"
         android:backgroundTint="@color/design_default_color_background"
         android:backgroundTintMode="multiply"
         android:gravity="center"
         android:text="ID"
-        android:textSize="30dp"
+        android:textSize="25dp"
 
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/titleTxtView2" />
@@ -55,15 +55,17 @@
         android:backgroundTint="@color/material_on_surface_disabled"
         android:gravity="center"
         android:text="Password"
-        android:textSize="27dp"
+        android:textSize="25dp"
         app:layout_constraintLeft_toLeftOf="parent"
 
         app:layout_constraintTop_toBottomOf="@id/idTxtView" />
 
     <EditText
         android:id="@+id/idEdtTxt"
-        android:layout_width="222dp"
-        android:layout_height="37dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="20dp"
         android:hint=" 이메일"
         android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="@+id/idTxtView"
@@ -75,9 +77,11 @@
 
     <EditText
         android:id="@+id/pwEdtTxt"
-        android:layout_width="225dp"
-        android:layout_height="37dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="16dp"
         android:hint=" pwd"
         android:textSize="30dp"
         app:layout_constraintHorizontal_bias="0.186"
@@ -90,7 +94,7 @@
         android:layout_width="127dp"
         android:layout_height="60dp"
         android:layout_marginStart="140dp"
-        android:layout_marginTop="232dp"
+        android:layout_marginTop="196dp"
         android:text="로그인"
         android:textSize="30dp"
         app:layout_constraintStart_toStartOf="parent"
