@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Andriod_Project"
         android:usesCleartextTraffic="true">
-        <activity android:name=".LoginSelectActivity"></activity>
+        <activity android:name=".RankingActivity"></activity>
+        <activity android:name=".LoginSelectActivity" />
         <activity android:name=".ChallengeModeActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".JoinActivity" />
