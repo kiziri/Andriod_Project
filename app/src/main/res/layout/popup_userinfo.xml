@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="10dp"
+    android:background="#CCCCCC">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:padding="10dp"
+        android:text="내 정보" />
+
+    <ImageView
+        android:id="@+id/userProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/user_profile" />
+
+    <TextView
+        android:id="@+id/nicknameTxtView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="25dp"
+        android:padding="10dp"
+        android:text="회원 닉네임" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:layout_marginTop="10dp"
+            android:textSize="25dp"
+            android:padding="5dp"
+            android:text="회원 아이디 : " />
+
+        <TextView
+            android:id="@+id/idTxtView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="right"
+            android:layout_marginTop="10dp"
+            android:textSize="25dp"
+            android:padding="5dp"
+            android:text="말랑말랑두뇌퀴즈@말랑말랑.퀴즈" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="left"
+            android:layout_marginTop="10dp"
+            android:textSize="25dp"
+            android:padding="10dp"
+            android:text="회원 이름 : " />
+
+        <TextView
+            android:id="@+id/nameTxtView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:layout_marginTop="10dp"
+            android:textSize="25dp"
+            android:padding="10dp"
+            android:text="홍 길동" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="left"
+            android:layout_marginTop="10dp"
+            android:textSize="25dp"
+            android:padding="10dp"
+            android:text="나의 랭크 포인트 : " />
+
+        <TextView
+            android:id="@+id/rankPointTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:layout_marginTop="10dp"
+            android:textSize="25dp"
+            android:padding="10dp"
+            android:text="0개" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="left"
+            android:layout_marginTop="10dp"
+            android:textSize="25dp"
+            android:padding="10dp"
+            android:text="내가 푼 문제 수 : " />
+
+        <TextView
+            android:id="@+id/solveProblemTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:layout_marginTop="10dp"
+            android:textSize="25dp"
+            android:padding="10dp"
+            android:text="0개" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="left"
+            android:layout_marginTop="10dp"
+            android:textSize="25dp"
+            android:padding="10dp"
+            android:text="내가 맞힌 문제 수 : " />
+
+        <TextView
+            android:id="@+id/correctProblemTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:layout_marginTop="10dp"
+            android:textSize="25dp"
+            android:padding="10dp"
+            android:text="0개" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/userInfoCloseBtn"
+        android:onClick="mainHomeSystem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:padding="5dp"
+        android:textSize="20dp"
+        android:text="닫기"/>
+
+
+
+</LinearLayout>

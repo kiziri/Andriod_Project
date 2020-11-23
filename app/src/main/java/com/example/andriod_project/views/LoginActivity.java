@@ -102,7 +102,6 @@ public class LoginActivity extends AppCompatActivity {
             public void onResponse(Call<UserVO> call, Response<UserVO> response) {
                 UserVO userVO = response.body();
 
-
                 System.out.println("---------------\n");
                 intent = new Intent(LoginActivity.this, MainHomeActivity.class);
                 intent.putExtra("userId", userVO.getUserid());
