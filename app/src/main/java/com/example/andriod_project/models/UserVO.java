@@ -1,39 +1,39 @@
 package com.example.andriod_project.models;
 
 public class UserVO {
-    private String userId;
-    private String userPw;
-    private String userName;
-    private String userNickname;
-    private int userRankPoint;
-    private int userSolveProblem;
-    private int userCorrectProblem;
+    private String userid;
+    private String userpw;
+    private String username;
+    private String usernickname;
+    private int userrankpoint;
+    private int usersolveproblem;
+    private int usercorrectproblem;
 
-    public String getUserId() { return userId; }
+    public String getUserid() { return userid; }
 
-    public void setUserId(String userId) { this.userId = userId; }
+    public void setUserid(String userid) { this.userid = userid; }
 
-    public String getUserPw() { return userPw; }
+    public String getUserpw() { return userpw;}
 
-    public void setUserPw(String userPw) { this.userPw = userPw; }
+    public void setUserpw(String userpw) { this.userpw = userpw; }
 
-    public String getUserName() { return userName; }
+    public String getUsername() { return username; }
 
-    public void setUserName(String userName) { this.userName = userName; }
+    public void setUsername(String username) { this.username = username; }
 
-    public String getUserNickname() { return userNickname; }
+    public String getUsernickname() { return usernickname; }
 
-    public void setUserNickname(String userNickname) { this.userNickname = userNickname; }
+    public void setUsernickname(String usernickname) { this.usernickname = usernickname; }
 
-    public int getUserRankPoint() { return userRankPoint; }
+    public int getUserrankpoint() { return userrankpoint; }
 
-    public void setUserRankPoint(int userRankPoint) { this.userRankPoint = userRankPoint; }
+    public void setUserrankpoint(int userrankpoint) { this.userrankpoint = userrankpoint; }
 
-    public int getUserSolveProblem() { return userSolveProblem; }
+    public int getUsersolveproblem() { return usersolveproblem; }
 
-    public void setUserSolveProblem(int userSolveProblem) { this.userSolveProblem = userSolveProblem; }
+    public void setUsersolveproblem(int usersolveproblem) { this.usersolveproblem = usersolveproblem; }
 
-    public int getUserCorrectProblem() { return userCorrectProblem; }
+    public int getUsercorrectproblem() { return usercorrectproblem; }
 
-    public void setUserCorrectProblem(int userCorrectProblem) { this.userCorrectProblem = userCorrectProblem; }
+    public void setUsercorrectproblem(int usercorrectproblem) { this.usercorrectproblem = usercorrectproblem; }
 }
