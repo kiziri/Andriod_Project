@@ -1,4 +1,4 @@
-package com.example.andriod_project;
+package com.example.andriod_project.views;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.team_braintraining.R;
+import com.example.andriod_project.R;
 
 public class solutionActivity extends AppCompatActivity {
     //변수 선언

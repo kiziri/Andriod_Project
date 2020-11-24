@@ -64,16 +64,7 @@ public class LoginActivity extends AppCompatActivity {
         retrofit = new Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create()).build();
         remoteService = retrofit.create(RemoteService.class);
 
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String getId = idEdtText.getText().toString();
-                String getPw = pwEdtText.getText().toString();
 
-                // 유저 회원 로그인 확인 메소드 호출
-                userLogin(getId, getPw);
-            }
-        });
     }
 
     // 유저 로그인 확인 메소드
