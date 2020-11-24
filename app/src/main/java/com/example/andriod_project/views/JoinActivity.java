@@ -78,6 +78,10 @@ public class JoinActivity extends AppCompatActivity {
                     userRegister(getId, getPw, getName, getNickname);
                 }
                 break;
+            case R.id.btnCancel :
+                System.out.println("------------추가 취소");
+                finish();
+                break;
         }
 
     }
