@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/loadingpicture"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="158dp"
+        android:layout_height="132dp"
         android:layout_marginTop="260dp"
         android:src="@drawable/ic_baseline_directions_boat_24"
         app:layout_constraintLeft_toLeftOf="parent"
