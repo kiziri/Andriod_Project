@@ -12,7 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Andriod_Project"
         android:usesCleartextTraffic="true">
-        <activity android:name=".views.LoadingActivity"></activity>
         <activity android:name=".views.RankingActivity" />
         <activity android:name=".views.ChallengeModeActivity" />
         <activity android:name=".views.StoryModeActivity" />
