@@ -12,7 +12,7 @@ import androidx.viewpager.widget.PagerAdapter;
 
 import com.example.andriod_project.R;
 
-public class Adapter extends PagerAdapter{
+public class StoryModeAdapter extends PagerAdapter{
 
     //이미지 배열 선언
     int[] images = {R.drawable.lvbtn1, R.drawable.lvbtn2, R.drawable.lvbtn3, R.drawable.lvbtn4, R.drawable.lvbtn5,
@@ -28,7 +28,7 @@ public class Adapter extends PagerAdapter{
     private LayoutInflater inflater;
     private Context context;
 
-    public Adapter(Context context){
+    public StoryModeAdapter(Context context){
         this.context = context;
     }
 

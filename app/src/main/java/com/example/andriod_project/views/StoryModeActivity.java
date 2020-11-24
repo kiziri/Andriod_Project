@@ -9,11 +9,11 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.andriod_project.R;
-import com.example.andriod_project.adapters.Adapter;
+import com.example.andriod_project.adapters.StoryModeAdapter;
 
 public class StoryModeActivity extends AppCompatActivity {
 
-    Adapter adapter;
+    StoryModeAdapter storyModeAdapter;
     ViewPager viewPager;
 
     @Override
@@ -29,8 +29,8 @@ public class StoryModeActivity extends AppCompatActivity {
 
         //뷰페이저 설정
         viewPager = (ViewPager) findViewById(R.id.view);
-        adapter = new Adapter(this);
-        viewPager.setAdapter(adapter);
+        storyModeAdapter = new StoryModeAdapter(this);
+        viewPager.setAdapter(storyModeAdapter);
 
         //각 이미지 뷰에 대한 클릭 리스너
         back.setOnClickListener(new View.OnClickListener() {
