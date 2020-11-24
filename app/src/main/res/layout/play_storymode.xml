@@ -7,28 +7,6 @@
     tools:context=".views.MainActivity">
 
 
-    <ImageView
-        android:id="@+id/back"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:src="@drawable/back_btn" />
 
-    <ImageView
-        android:id="@+id/home"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:src="@drawable/home_btn" />
-
-    <view
-        android:id="@+id/view"
-        class="androidx.viewpager.widget.ViewPager"
-        android:layout_width="420dp"
-        android:layout_height="400dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="150dp" />
 
 </RelativeLayout>
