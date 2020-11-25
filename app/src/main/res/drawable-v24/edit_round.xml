@@ -4,7 +4,7 @@
     android:shape="rectangle">
 
     <stroke android:width="2dp"
-        android:color="@color/material_on_surface_disabled"/>
+        android:color="#FFFFFF"/>
 
     <solid android:color="#00000000"/>
     <corners

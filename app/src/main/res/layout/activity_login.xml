@@ -4,20 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/mainbackground2"
+    android:background="@drawable/blue"
     tools:context=".views.LoginActivity">
 
     <TextView
         android:id="@+id/titleTxtView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="112dp"
+        android:layout_marginTop="75dp"
         android:gravity="center"
-        android:text=" 말랑말랑"
-        android:textStyle="bold"
-        android:textSize="70sp"
-        app:layout_constraintRight_toRightOf="parent"
+        android:text="말랑말랑"
+        android:textColor="#FFFFFF"
+        android:textSize="80sp"
+        android:textStyle="bold|italic"
         app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -26,9 +27,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:gravity="center"
-        android:textStyle="bold"
         android:text="두뇌 트레이닝"
-        android:textSize="30sp"
+        android:textColor="#FFFFFF"
+        android:textSize="35dp"
+        android:textStyle="bold|italic"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titleTxtView1" />
@@ -36,42 +38,47 @@
 
     <EditText
         android:id="@+id/idEdtTxt"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="95dp"
-        android:gravity="center_horizontal"
 
-        android:hint="이메일"
+        android:layout_marginTop="100dp"
+        android:layout_marginRight="50dp"
         android:background="@drawable/edit_round"
-        android:textSize="30dp"
+        android:gravity="center_horizontal"
+        android:hint="이메일"
+        android:textColor="#FAF2F2"
+        android:textColorHint="#FAF6F6"
+        android:textSize="25dp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/titleTxtView2" />
 
     <EditText
         android:id="@+id/pwEdtTxt"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
+        android:layout_marginRight="50dp"
         android:background="@drawable/edit_round"
         android:gravity="center_horizontal"
         android:hint="비밀번호"
         android:inputType="textPassword"
-        android:textSize="30dp"
+        android:textColor="#FAF2F2"
+        android:textColorHint="#FAF6F6"
+        android:textSize="25dp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/idEdtTxt" />
 
-    <Button
+    <ImageButton
         android:id="@+id/loginBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:backgroundTint="@color/white"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="85dp"
+        android:background="@drawable/login"
         android:onClick="loginModeSystem"
         android:padding="10dp"
         android:text="로그인"
         android:textSize="30dp"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:textColor="@color/white"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pwEdtTxt" />
@@ -79,34 +86,34 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        app:layout_constraintTop_toBottomOf="@+id/loginBtn">
+        app:layout_constraintTop_toBottomOf="@+id/loginBtn"
+        tools:layout_editor_absoluteX="20dp">
 
-        <Button
-            android:textColor="@color/white"
+        <ImageButton
             android:id="@+id/googleLoginBtn"
-            android:onClick="loginModeSystem"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
             style="@style/Widget.AppCompat.Button.Borderless"
-            android:padding="10dp"
-            android:backgroundTint="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_margin="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/oogle"
+            android:onClick="loginModeSystem"
             android:text="Google"
+            android:textColor="@color/white"
             android:textSize="30dp" />
 
-        <Button
-            android:textColor="@color/white"
+        <ImageButton
             android:id="@+id/joinBtn"
-            android:onClick="loginModeSystem"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginLeft="30dp"
             style="@style/Widget.AppCompat.Button.Borderless"
-            android:backgroundTint="@color/white"
-            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_margin="20dp"
+            android:layout_marginLeft="30dp"
+            android:layout_weight="1"
+            android:background="@drawable/register"
+            android:onClick="loginModeSystem"
             android:text="회원가입"
+            android:textColor="@color/white"
             android:textSize="30dp" />
     </LinearLayout>
 

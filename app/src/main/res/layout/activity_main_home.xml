@@ -6,6 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/blue"
     tools:context=".views.MainHomeActivity">
 
     <ImageView
@@ -22,11 +23,10 @@
 
     <TextView
         android:id="@+id/userNicknameTxtView"
-        android:onClick="mainHomeSystem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
         android:layout_marginTop="15dp"
+        android:onClick="mainHomeSystem"
         android:text="Nickname"
         android:textSize="25dp"
         app:layout_constraintLeft_toRightOf="@+id/profileImgVIew"
@@ -42,15 +42,16 @@
         app:layout_constraintTop_toTopOf="parent"
         android:src="@drawable/menu_btn"/>
 
-    <Button
+    <ImageButton
         android:id="@+id/rankBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Rank 확인"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
         android:layout_marginTop="10dp"
-        app:layout_constraintTop_toTopOf="parent"
         android:layout_marginRight="10dp"
-        app:layout_constraintRight_toLeftOf="@id/menuListBtn" />
+        android:background="@drawable/ranking1"
+        android:text="Ranking"
+        app:layout_constraintRight_toLeftOf="@id/menuListBtn"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/rankListBtn"
@@ -66,58 +67,63 @@
         android:id="@+id/titleTxtView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
         android:gravity="center"
         android:text=" 말랑말랑"
+        android:textColor="#FFFFFF"
         android:textSize="100dp"
-        android:layout_marginTop="300dp"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/titleTxtView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:gravity="center"
         android:text="두뇌 트레이닝"
+        android:textColor="#FFFFFF"
         android:textSize="50dp"
-        android:layout_marginTop="5dp"
         app:layout_constraintTop_toBottomOf="@+id/titleTxtView1" />
 
-    <Button
+    <ImageButton
         android:id="@+id/storyBtn"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="70dp"
+        android:background="@drawable/storymode"
         android:onClick="mainHomeSystem"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="40dp"
         android:padding="20dp"
         android:text="스토리 모드"
-        android:layout_marginTop="150dp"
-        app:layout_constraintTop_toBottomOf="@id/titleTxtView2"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
-
-    <Button
-        android:id="@+id/challengeBtn"
-        android:onClick="mainHomeSystem"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:textSize="40dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleTxtView2" />
+
+    <ImageButton
+        android:id="@+id/challengeBtn"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/challengemode"
+        android:onClick="mainHomeSystem"
         android:padding="20dp"
         android:text="도전 모드"
-        android:layout_marginTop="20dp"
-        app:layout_constraintTop_toBottomOf="@id/storyBtn"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
-
-    <Button
-        android:id="@+id/studyBtn"
-        android:onClick="mainHomeSystem"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:textSize="40dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/storyBtn" />
+
+    <ImageButton
+        android:id="@+id/studyBtn"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/studymode"
+        android:onClick="mainHomeSystem"
         android:padding="20dp"
         android:text="학습 모드"
-        android:layout_marginTop="20dp"
-        app:layout_constraintTop_toBottomOf="@id/challengeBtn"
+        android:textSize="40dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/challengeBtn" />
 </androidx.constraintlayout.widget.ConstraintLayout>
