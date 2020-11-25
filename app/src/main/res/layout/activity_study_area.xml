@@ -5,8 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.StudyAreaActivity"
-    android:background="@drawable/blue">
+    android:background="@drawable/blue"
+    tools:context=".views.StudyModeActivity">
+
     <LinearLayout
         android:id="@+id/mainBarLinear"
         android:layout_width="match_parent"

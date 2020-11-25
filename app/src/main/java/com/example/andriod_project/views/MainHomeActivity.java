@@ -24,7 +24,6 @@ public class MainHomeActivity extends AppCompatActivity {
 
     TextView userNicknameTxtView, nicknameTxtView, idTxtView, nameTxtView, rankPointTxt, solveProblemTxt, correctProblemTxt;
     ImageView profileImgView, RankImgView;
-    Button userInfoCloseBtn;
 
     ConstraintLayout popupConstraint;
     PopupWindow userInfoPopup;

@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.andriod_project.R;
 
-public class solutionActivity extends AppCompatActivity {
+public class SolutionActivity extends AppCompatActivity {
     //변수 선언
     RadioGroup radioGroup; //선택지 라디오 그룹
     RadioButton selRadioBtn1,selRadioBtn2, selRadioBtn3, selRadioBtn4; //라디오 그룹 내부 선택지 4개 라디오 버튼

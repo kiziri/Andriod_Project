@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import com.example.andriod_project.R;
 
-public class StudyAreaActivity extends AppCompatActivity {
+public class StudyModeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
