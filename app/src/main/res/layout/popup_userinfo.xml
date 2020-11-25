@@ -5,15 +5,18 @@
     android:orientation="vertical"
     android:gravity="center_horizontal"
     android:padding="10dp"
-    android:background="#CCCCCC">
+    android:background="@drawable/blue"
+    >
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:textSize="30dp"
         android:padding="10dp"
-        android:text="내 정보" />
+        android:text="내 정보"
+        android:textColor="#FFFFFF"
+        android:textSize="30dp"
+        android:textStyle="bold" />
 
     <ImageView
         android:id="@+id/userProfile"
@@ -26,9 +29,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:textSize="25dp"
         android:padding="10dp"
-        android:text="회원 닉네임" />
+        android:text="회원 닉네임"
+        android:textColor="#FFFFFF"
+        android:textSize="25dp"
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -42,8 +47,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="left"
-            android:textSize="20dp"
-            android:text="회원 ID : " />
+            android:text="회원 ID : "
+            android:textColor="#FFFFFF"
+            android:textSize="20dp" />
 
         <TextView
             android:id="@+id/idTxtView"
@@ -51,8 +57,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="3"
             android:gravity="right"
-            android:textSize="20dp"
-            android:text="말랑말랑두뇌퀴즈@말랑말랑.퀴즈" />
+            android:text="말랑말랑두뇌퀴즈@말랑말랑.퀴즈"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp" />
     </LinearLayout>
 
 
@@ -68,8 +75,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="2"
             android:gravity="left"
-            android:textSize="20dp"
-            android:text="회원 이름 : " />
+            android:text="회원 이름 : "
+            android:textColor="#FFFFFF"
+            android:textSize="20dp" />
 
         <TextView
             android:id="@+id/nameTxtView"
@@ -77,8 +85,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="right"
-            android:textSize="20dp"
-            android:text="홍 길동" />
+            android:text="홍 길동"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -93,8 +102,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="2"
             android:gravity="left"
-            android:textSize="20dp"
-            android:text="나의 랭크 포인트 : " />
+            android:text="나의 랭크 포인트 : "
+            android:textColor="#FFFFFF"
+            android:textSize="20dp" />
 
         <TextView
             android:id="@+id/rankPointTxt"
@@ -102,8 +112,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="right"
-            android:textSize="20dp"
-            android:text="0개" />
+            android:text="0개"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -118,8 +129,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="2"
             android:gravity="left"
-            android:textSize="20dp"
-            android:text="내가 푼 문제 수 : " />
+            android:text="내가 푼 문제 수 : "
+            android:textColor="#FFFFFF"
+            android:textSize="20dp" />
 
         <TextView
             android:id="@+id/solveProblemTxt"
@@ -127,8 +139,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="right"
-            android:textSize="20dp"
-            android:text="0개" />
+            android:text="0개"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -143,8 +156,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="2"
             android:gravity="left"
-            android:textSize="20dp"
-            android:text="내가 맞힌 문제 수 : " />
+            android:text="내가 맞힌 문제 수 : "
+            android:textColor="#FFFFFF"
+            android:textSize="20dp" />
 
         <TextView
             android:id="@+id/correctProblemTxt"
@@ -152,19 +166,21 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="right"
-            android:textSize="20dp"
-            android:text="0개" />
+            android:text="0개"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp" />
     </LinearLayout>
 
-    <Button
+    <ImageButton
         android:id="@+id/userInfoCloseBtn"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/cancel"
         android:onClick="mainHomeSystem"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:padding="5dp"
-        android:textSize="20dp"
-        android:text="닫기"/>
+        android:textColor="#FFFFFF"
+        android:textSize="20dp" />
 
 
 
