@@ -44,6 +44,7 @@
 
     <ImageButton
         android:id="@+id/rankBtn"
+        android:onClick="mainHomeSystem"
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
