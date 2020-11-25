@@ -92,6 +92,9 @@ public class MainHomeActivity extends AppCompatActivity {
                 intent.putExtra("userSolveProblem", userSolveProblem);
                 intent.putExtra("userCorrectProblem", userCorrectProblem);
                 System.out.println("---------------------\n");
+                System.out.println("" + userId + "/" + userName + "/" + userNickname + "/" + userRankPoint + userSolveProblem + userCorrectProblem);
+                startActivity(intent);
+                onStop();
                 break;
             case R.id.challengeBtn :
 
