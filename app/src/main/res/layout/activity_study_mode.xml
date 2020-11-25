@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.ChallengeModeActivity"
+    tools:context=".views.StudyModeActivity"
     android:background="@drawable/blue">
 
     <LinearLayout
@@ -18,7 +18,7 @@
 
         <ImageView
             android:id="@+id/profileImgVIew"
-            android:onClick="challengeModeSystem"
+            android:onClick="studyModeSystem"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginLeft="10dp"
@@ -30,7 +30,7 @@
 
         <TextView
             android:id="@+id/userNicknameTxtView"
-            android:onClick="challengeModeSystem"
+            android:onClick="studyModeSystem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
@@ -41,6 +41,7 @@
 
         <ImageView
             android:id="@+id/rankListBtn"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
@@ -52,7 +53,7 @@
 
         <ImageButton
             android:id="@+id/rankBtn"
-            android:onClick="challengeModeSystem"
+            android:onClick="studyModeSystem"
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
@@ -83,7 +84,7 @@
 
         <ImageView
             android:id="@+id/back"
-            android:onClick="challengeModeSystem"
+            android:onClick="studyModeSystem"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_alignParentLeft="true"
@@ -92,7 +93,7 @@
 
         <ImageView
             android:id="@+id/home"
-            android:onClick="challengeModeSystem"
+            android:onClick="studyModeSystem"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_alignParentTop="true"
@@ -109,7 +110,7 @@
 
         <ImageView
             android:id="@+id/categoryBtn"
-            android:onClick="challengeModeSystem"
+            android:onClick="studyModeSystem"
             android:layout_width="200dp"
             android:layout_height="120dp"
             android:layout_alignParentBottom="true"
