@@ -1,5 +1,7 @@
 package com.example.andriod_project.models;
 
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
@@ -14,5 +16,8 @@ public interface RemoteService {
 
     @GET("loginUser.jsp")
     Call<UserVO> loginUser(@Query("userid") String userid);
+
+    @GET("ranking.jsp")
+    Call<List<ItemData>> ranking(@Query("userrankpoint") String getPart, @Query("query") String query);
 
 }
