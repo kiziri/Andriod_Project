@@ -25,7 +25,7 @@
         android:id="@+id/titleTxtView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="5dp"
         android:gravity="center"
         android:text="두뇌 트레이닝"
         android:textColor="#FFFFFF"
@@ -42,13 +42,14 @@
         android:layout_height="wrap_content"
 
         android:layout_marginTop="100dp"
-        android:layout_marginRight="50dp"
+
         android:background="@drawable/edit_round"
         android:gravity="center_horizontal"
         android:hint="이메일"
         android:textColor="#FAF2F2"
         android:textColorHint="#FAF6F6"
         android:textSize="25dp"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/titleTxtView2" />
 
@@ -56,8 +57,7 @@
         android:id="@+id/pwEdtTxt"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:layout_marginRight="50dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/edit_round"
         android:gravity="center_horizontal"
         android:hint="비밀번호"
@@ -66,6 +66,7 @@
         android:textColorHint="#FAF6F6"
         android:textSize="25dp"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/idEdtTxt" />
 
     <ImageButton
