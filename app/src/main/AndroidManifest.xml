@@ -19,7 +19,6 @@
         <activity android:name=".views.JoinActivity" />
         <activity android:name=".views.MainHomeActivity" />
         <activity android:name=".views.StudyAreaActivity" />
-        <activity android:name=".views.ModeSelectionActivity" />
         <activity android:name=".views.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

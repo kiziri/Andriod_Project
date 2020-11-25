@@ -15,7 +15,7 @@
         android:paddingBottom="15dp">
 
         <ImageView
-            android:id="@+id/crownImage"
+            android:id="@+id/crown"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:baselineAlignBottom="false"

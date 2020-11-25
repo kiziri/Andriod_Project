@@ -12,7 +12,7 @@
         android:background="#FFFFFF"
         android:gravity="center_horizontal|center_vertical"
         android:text="1"
-        android:textColor="#0F52F8"
+        android:textColor="#FFEB3B"
         android:textColorHighlight="#FFEB3B"
         android:textSize="30sp"
         android:textStyle="bold" />
@@ -24,7 +24,7 @@
         android:layout_weight="1"
         android:background="#FFFFFF"
         android:text="Nickname"
-        android:textColor="#000000"
+        android:textColor="#FFFFFF"
         android:textSize="20sp" />
 
     <TextView
