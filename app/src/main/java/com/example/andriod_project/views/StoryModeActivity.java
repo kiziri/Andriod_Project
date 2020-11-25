@@ -88,21 +88,6 @@ public class StoryModeActivity extends AppCompatActivity {
 
     public void storyModeSystem(View view) {
         switch (view.getId()) {
-            case R.id.storyBtn :
-                intent = new Intent(StoryModeActivity.this, SolutionActivity.class);
-                System.out.println("---------------------\n");
-                startActivity(intent);
-                onStop();
-                break;
-            case R.id.challengeBtn :
-                intent = new Intent(StoryModeActivity.this, SolutionActivity.class);
-                System.out.println("---------------------\n");
-                startActivity(intent);
-                onStop();
-                break;
-            case R.id.studyBtn :
-
-                break;
             case R.id.userNicknameTxtView :
             case R.id.profileImgVIew :
                 userInfoPopup.showAtLocation(popupConstraint, Gravity.CENTER_HORIZONTAL|Gravity.CENTER_VERTICAL, 0, 0);

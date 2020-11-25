@@ -96,10 +96,28 @@ public class MainHomeActivity extends AppCompatActivity {
                 onStop();
                 break;
             case R.id.challengeBtn :
-
+                intent = new Intent(MainHomeActivity.this, ChallengeModeActivity.class);
+                intent.putExtra("userName", userName);
+                intent.putExtra("userNickname", userNickname);
+                intent.putExtra("userRankPoint", userRankPoint);
+                intent.putExtra("userSolveProblem", userSolveProblem);
+                intent.putExtra("userCorrectProblem", userCorrectProblem);
+                System.out.println("---------------------\n");
+                System.out.println("" + userId + "/" + userName + "/" + userNickname + "/" + userRankPoint + userSolveProblem + userCorrectProblem);
+                startActivity(intent);
+                onStop();
                 break;
             case R.id.studyBtn :
-
+                intent = new Intent(MainHomeActivity.this, StudyModeActivity.class);
+                intent.putExtra("userName", userName);
+                intent.putExtra("userNickname", userNickname);
+                intent.putExtra("userRankPoint", userRankPoint);
+                intent.putExtra("userSolveProblem", userSolveProblem);
+                intent.putExtra("userCorrectProblem", userCorrectProblem);
+                System.out.println("---------------------\n");
+                System.out.println("" + userId + "/" + userName + "/" + userNickname + "/" + userRankPoint + userSolveProblem + userCorrectProblem);
+                startActivity(intent);
+                onStop();
                 break;
             case R.id.userNicknameTxtView :
             case R.id.profileImgVIew :
