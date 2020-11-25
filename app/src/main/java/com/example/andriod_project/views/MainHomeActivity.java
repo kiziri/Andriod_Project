@@ -109,6 +109,13 @@ public class MainHomeActivity extends AppCompatActivity {
             case R.id.userInfoCloseBtn :
                 userInfoPopup.dismiss();
                 break;
+            case R.id.rankBtn :
+                intent = new Intent(MainHomeActivity.this, RankingActivity.class);
+                intent.putExtra("userNickname", userNickname);
+                System.out.println("---------------------\n");
+                startActivity(intent);
+                onStop();
+                break;
         }
     }
 }
