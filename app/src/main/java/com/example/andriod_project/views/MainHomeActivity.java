@@ -24,6 +24,7 @@ public class MainHomeActivity extends AppCompatActivity {
 
     TextView userNicknameTxtView, nicknameTxtView, idTxtView, nameTxtView, rankPointTxt, solveProblemTxt, correctProblemTxt;
     ImageView profileImgView, RankImgView;
+    Button userInfoCloseBtn;
 
     ConstraintLayout popupConstraint;
     PopupWindow userInfoPopup;
@@ -77,6 +78,15 @@ public class MainHomeActivity extends AppCompatActivity {
         rankPointTxt.setText(userRankPoint+"점");
         solveProblemTxt.setText(userSolveProblem+"개");
         correctProblemTxt.setText(userCorrectProblem+"개");
+
+        // 유저 정보 팝업 윈도우 종료 버튼 이벤트 구현부
+        userInfoCloseBtn = popupView.findViewById(R.id.userInfoCloseBtn);
+        userInfoCloseBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                userInfoPopup.dismiss();
+            }
+        });
     }
 
     // 버튼 이벤트 리스터 구현부
@@ -123,9 +133,6 @@ public class MainHomeActivity extends AppCompatActivity {
             case R.id.profileImgVIew :
                 userInfoPopup.showAtLocation(popupConstraint, Gravity.CENTER_HORIZONTAL|Gravity.CENTER_VERTICAL, 0, 0);
                 userInfoPopup.setAnimationStyle(-1);
-                break;
-            case R.id.userInfoCloseBtn :
-                userInfoPopup.dismiss();
                 break;
             case R.id.rankBtn :
                 intent = new Intent(MainHomeActivity.this, RankingActivity.class);

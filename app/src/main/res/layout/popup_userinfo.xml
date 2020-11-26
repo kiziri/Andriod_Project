@@ -182,7 +182,6 @@
         android:layout_height="50dp"
         android:layout_marginTop="50dp"
         android:background="@drawable/cancel"
-        android:onClick="mainHomeSystem"
         android:padding="5dp"
         android:textColor="#FFFFFF"
         android:textSize="20dp" />

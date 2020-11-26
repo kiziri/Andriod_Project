@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
@@ -23,6 +24,7 @@ public class ChallengeModeActivity extends AppCompatActivity {
 
     ImageView back, home, profileImgView, RankImgView, categoryBtn;
     TextView userNicknameTxtView, nicknameTxtView, idTxtView, nameTxtView, rankPointTxt, solveProblemTxt, correctProblemTxt;
+    Button userInfoCloseBtn;
 
     ConstraintLayout popupConstraint;
     PopupWindow userInfoPopup;
@@ -83,6 +85,15 @@ public class ChallengeModeActivity extends AppCompatActivity {
         rankPointTxt.setText(userRankPoint + "점");
         solveProblemTxt.setText(userSolveProblem + "개");
         correctProblemTxt.setText(userCorrectProblem + "개");
+
+        // 유저 정보 팝업 윈도우 종료 버튼 이벤트 구현부
+        userInfoCloseBtn = popupView.findViewById(R.id.userInfoCloseBtn);
+        userInfoCloseBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                userInfoPopup.dismiss();
+            }
+        });
     }
 
     public void challengeModeSystem(View view) {
@@ -103,9 +114,6 @@ public class ChallengeModeActivity extends AppCompatActivity {
             case R.id.profileImgVIew :
                 userInfoPopup.showAtLocation(popupConstraint, Gravity.CENTER_HORIZONTAL|Gravity.CENTER_VERTICAL, 0, 0);
                 userInfoPopup.setAnimationStyle(-1);
-                break;
-            case R.id.userInfoCloseBtn :
-                userInfoPopup.dismiss();
                 break;
         }
     }
