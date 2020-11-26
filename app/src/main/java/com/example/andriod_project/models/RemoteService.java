@@ -18,6 +18,6 @@ public interface RemoteService {
     Call<UserVO> loginUser(@Query("userid") String userid);
 
     @GET("ranking.jsp")
-    Call<List<ItemData>> ranking(@Query("userrankpoint") String getPart, @Query("query") String query);
+    Call<List<RankingVO>> ranking();
 
 }

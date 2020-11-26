@@ -1,22 +1,24 @@
 package com.example.andriod_project.adapters;
 
 import android.content.Context;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.example.andriod_project.models.ItemData;
+import com.example.andriod_project.models.RankingVO;
 import com.example.andriod_project.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class RankingAdapter extends BaseAdapter {
-    List<ItemData> arrayRanker = new ArrayList<>();
+    List<RankingVO> arrayRanker;
     LayoutInflater inflater = null;
+
+    public RankingAdapter(List<RankingVO> arrayRanker) {
+        this.arrayRanker = arrayRanker;
+    }
 
     @Override
     public int getCount() {
@@ -35,6 +37,7 @@ public class RankingAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_rankinglist, parent, false);
         if (convertView == null) {
             final Context context = parent.getContext();
             if (inflater == null) {
@@ -42,15 +45,14 @@ public class RankingAdapter extends BaseAdapter {
             }
             convertView = inflater.inflate(R.layout.item_rankinglist, parent, false);
         }
+        
+        TextView nickname = (TextView) view.findViewById(R.id.nickName);
+        TextView rankingP = (TextView) view.findViewById(R.id.rankPoint);
 
-        TextView rankcount = (TextView) convertView.findViewById(R.id.rankingNum);
-        TextView nickname = (TextView) convertView.findViewById(R.id.nickName);
-        TextView rankingP = (TextView) convertView.findViewById(R.id.rankPoint);
 
-        rankcount.setText(arrayRanker.get(position).getUseranking());
         nickname.setText(arrayRanker.get(position).getUsernickname());
-        rankingP.setText(arrayRanker.get(position).getUserrankpoint());
+        rankingP.setText(""+arrayRanker.get(position).getUserrankpoint());
 
-        return convertView;
+        return view;
     }
 }

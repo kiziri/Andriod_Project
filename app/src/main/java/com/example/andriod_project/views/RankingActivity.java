@@ -5,16 +5,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.andriod_project.R;
 import com.example.andriod_project.adapters.RankingAdapter;
-import com.example.andriod_project.models.ItemData;
+import com.example.andriod_project.models.RankingVO;
 import com.example.andriod_project.models.RemoteService;
-import com.example.andriod_project.models.UserVO;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,9 +31,13 @@ public class RankingActivity extends AppCompatActivity {
     // mySQL 접근용 변수 선언
     Retrofit retrofit;
     RemoteService remoteService;
-    List<ItemData> ArrayRanker;
-    Intent intent;
+    List<RankingVO> arrayRanker;
     RankingAdapter adapter;
+
+    TextView userNicknameTxtView;
+    Intent intent;
+
+    String userNickname;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,37 +46,27 @@ public class RankingActivity extends AppCompatActivity {
 
         ImageView backbtn = (ImageView) findViewById(R.id.backBtn);
         ImageView homebtn = (ImageView) findViewById(R.id.homeBtn);
+        userNicknameTxtView = findViewById(R.id.userNicknameTxtView);   // 화면 상단 회원 닉네임 텍스트뷰 아이디
 
+        intent = getIntent();
+        userNickname = intent.getStringExtra("userNickname");
 
+        // 로그인한 유저의 닉네임을 메인 화면의 닉네임 부분에 세팅
+        userNicknameTxtView.setText(userNickname);
+
+        //Listview, Adapter 생성 및 연결
         listview = (ListView)findViewById(R.id.listView1);
-        ArrayRanker = new ArrayList<>();
-        adapter = new RankingAdapter();
+        arrayRanker = new ArrayList<>();
+        adapter = new RankingAdapter(arrayRanker);  // 어댑터 클래스가 외부에 선언되어 있으므로, 이를 무엇이 가져가는지 확인하기 위해
         listview.setAdapter(adapter);
 
 
         retrofit = new Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create()).build();
         remoteService = retrofit.create(RemoteService.class);
-        /*이동할 액티비티 삽입
-        Intent intent = new Intent(getApplicationContext(), );
-        */
+        
+        // 리스트 갱신을 위한 어댑터 호출
         getRankerInfo();
-
-    
-        /*랭커 정보(등수, 닉네임, 점수) 차례대로 대입하는 부분
-        ArrayList<ItemData> oData = new ArrayList<>();
-        for(int i = 0;i<10;++i){
-            ItemData oltem = new ItemData();
-            oltem.strRanking = ""+(i+1); //순위는 고정 1~10 차례대로
-            oltem.strNickame = "닉네임" + (i+1); //데이터베이스에서 가져온 닉네임 넣는 부분
-            oltem.strRankpoint = ""+(i+100); //데이터베이스에서 가져온 랭킹점수 넣는 부분
-            oData.add(oltem);
-            if(nDatCnt >= putRanker.length) nDatCnt=0;
-        }
-        */
-
-        //Listview, Adapter 생성 및 연결
-
-
+        
         //back버튼 누르면 다른 화면으로 전환
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,15 +86,18 @@ public class RankingActivity extends AppCompatActivity {
 
     // MySQL DB에서 회원 정보를 가져오는 메소드
     public void getRankerInfo() {
-        Call<List<ItemData>> call = remoteService.ranking("userrankpoint", "");
-        call.enqueue(new Callback<List<ItemData>>() {
+        arrayRanker.clear();    // ArrayList 초기화 함수
+        Call<List<RankingVO>> call = remoteService.ranking();
+        call.enqueue(new Callback<List<RankingVO>>() {
             @Override
-            public void onResponse(Call<List<ItemData>> call, Response<List<ItemData>> response) {
-                ArrayRanker = response.body();
+            public void onResponse(Call<List<RankingVO>> call, Response<List<RankingVO>> response) {
+                arrayRanker = response.body();
                 adapter.notifyDataSetChanged();
+                System.out.println("------------랭킹");
+                listview.setAdapter(adapter);
             }
             @Override
-            public void onFailure(Call<List<ItemData>> call, Throwable t) { }
+            public void onFailure(Call<List<RankingVO>> call, Throwable t) { }
         });
     }
 }

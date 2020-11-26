@@ -1,17 +1,9 @@
 package com.example.andriod_project.models;
 
-public class ItemData {
-    private String useranking;
+public class RankingVO {
     private String usernickname;
     private int userrankpoint;
 
-    public String getUseranking() {
-        return useranking;
-    }
-
-    public void setUseranking(String useranking) {
-        this.useranking = useranking;
-    }
 
     public String getUsernickname() {
         return usernickname;
