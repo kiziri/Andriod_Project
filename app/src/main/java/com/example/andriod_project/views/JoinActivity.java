@@ -111,6 +111,8 @@ public class JoinActivity extends AppCompatActivity {
         int userRankPoint = 0;
         int userSolveProblem = 0;
         int userCorrectProblem = 0;
+        String userStoryModeLevel = "easy";
+        int userStoryModeStage = 1;
         userVO.setUserid(userEmail);
         userVO.setUserpw(userPassword);
         userVO.setUsername(userName);
@@ -118,14 +120,16 @@ public class JoinActivity extends AppCompatActivity {
         userVO.setUserrankpoint(userRankPoint);
         userVO.setUsersolveproblem(userSolveProblem);
         userVO.setUsercorrectproblem(userCorrectProblem);
+        userVO.setUserstorymodelevel(userStoryModeLevel);
+        userVO.setUserstorymodestage(userStoryModeStage);
 
         Call<Void> call = remoteService.insertUser(userVO.getUserid(), userVO.getUserpw(), userVO.getUsername(), userVO.getUsernickname(),
-                userVO.getUserrankpoint(), userVO.getUsersolveproblem(), userVO.getUsercorrectproblem());
+                userVO.getUserrankpoint(), userVO.getUsersolveproblem(), userVO.getUsercorrectproblem(), userVO.getUserstorymodelevel(), userVO.getUserstorymodestage());
 
         call.enqueue(new Callback<Void>() {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
-                System.out.println("---------------\n");
+                System.out.println("---------------DB 저장 성공\n");
             }
             @Override
             public void onFailure(Call<Void> call, Throwable t) { }

@@ -12,7 +12,8 @@ public interface RemoteService {
 
     @POST("insertUser.jsp")
     Call<Void> insertUser(@Query("userid") String userid, @Query("userpw") String userpw, @Query("username") String username, @Query("usernickname") String usernickname,
-                            @Query("userrankpoint") int userrankpoint, @Query("usersolveproblem") int usersolveproblem, @Query("usercorrectproblem") int usercorrectproblem);
+                            @Query("userrankpoint") int userrankpoint, @Query("usersolveproblem") int usersolveproblem, @Query("usercorrectproblem") int usercorrectproblem,
+                            @Query("userstorymodelevel") String userstorymodelevel, @Query("userstorymodestage") int userstorymodestage);
 
     @GET("loginUser.jsp")
     Call<UserVO> loginUser(@Query("userid") String userid);
@@ -22,5 +23,8 @@ public interface RemoteService {
 
     @GET("readquestion.jsp")
     Call<QuestionVO> readQuestion(@Query("questiontype") String questiontype, @Query("questionid") int questionid);
+
+    @GET("storymodesave.jsp")
+    Call<UserVO> readSaveDate(@Query("userid") String userid);
 
 }

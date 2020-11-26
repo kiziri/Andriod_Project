@@ -8,6 +8,8 @@ public class UserVO {
     private int userrankpoint;
     private int usersolveproblem;
     private int usercorrectproblem;
+    private String userstorymodelevel;
+    private int userstorymodestage;
 
     public String getUserid() { return userid; }
 
@@ -36,4 +38,12 @@ public class UserVO {
     public int getUsercorrectproblem() { return usercorrectproblem; }
 
     public void setUsercorrectproblem(int usercorrectproblem) { this.usercorrectproblem = usercorrectproblem; }
+
+    public String getUserstorymodelevel() { return userstorymodelevel; }
+
+    public void setUserstorymodelevel(String userstorymodelevel) { this.userstorymodelevel = userstorymodelevel; }
+
+    public int getUserstorymodestage() { return userstorymodestage; }
+
+    public void setUserstorymodestage(int userstorymodesteage) { this.userstorymodestage = userstorymodesteage; }
 }
