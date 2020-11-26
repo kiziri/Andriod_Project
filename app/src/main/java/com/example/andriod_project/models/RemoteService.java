@@ -20,4 +20,7 @@ public interface RemoteService {
     @GET("ranking.jsp")
     Call<List<RankingVO>> ranking();
 
+    @GET("readquestion.jsp")
+    Call<QuestionVO> readQuestion(@Query("questiontype") String questiontype, @Query("questionid") int questionid);
+
 }
