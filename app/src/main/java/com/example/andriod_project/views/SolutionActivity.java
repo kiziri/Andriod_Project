@@ -1,5 +1,6 @@
 package com.example.andriod_project.views;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -19,6 +20,8 @@ public class SolutionActivity extends AppCompatActivity {
     RadioButton selRadioBtn1,selRadioBtn2, selRadioBtn3, selRadioBtn4; //라디오 그룹 내부 선택지 4개 라디오 버튼
     TextView qTextView, exsumTextView, exdetTextView; //질문 텍스트 뷰, 요약과 자세한 설명 텍스트 뷰
     Button exsummary, exdetail; //요약 버튼, 자세히 버튼
+    Intent intent;
+    String computer, currentevens, idiom, industrialrevolution, neologism, peripheral, philosophy, psychologhy, religion, science;
     static boolean answerCorrect = false; //정답인지 아닌지 구분
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +51,20 @@ public class SolutionActivity extends AppCompatActivity {
         //처음에는 해설 텍스트 뷰 안 보이게 함과 동시에 칸 안 차지하게 GONE으로 변경
         exsumTextView.setVisibility(View.GONE);
         exdetTextView.setVisibility(View.GONE);
+
+        //분야선택 값 받음
+        intent = getIntent();
+        computer = intent.getStringExtra("computer");
+        currentevens = intent.getStringExtra("currentevens");
+        idiom = intent.getStringExtra("idiom");
+        industrialrevolution = intent.getStringExtra("industrialrevolution");
+        neologism = intent.getStringExtra("neologism");
+        peripheral = intent.getStringExtra("peripheral");
+        philosophy = intent.getStringExtra("philosophy");
+        psychologhy = intent.getStringExtra("psychologhy");
+        religion = intent.getStringExtra("religion");
+        science = intent.getStringExtra("science");
+
 
         //해설 화면은 이미 선택하고 정답 체크가 된 상태이기 때문에 라디오 버튼에 리스너 없음
         //사용자가 선택한 선택지로 정답 체크 후 오답이면 선택지 빨간색 정답은 초록색. 정답을 선택했을 경우 선택지=정답 초록색
