@@ -12,13 +12,34 @@ import android.widget.Toast;
 import androidx.viewpager.widget.PagerAdapter;
 
 import com.example.andriod_project.R;
+import com.example.andriod_project.models.RemoteService;
+import com.example.andriod_project.models.UserVO;
 import com.example.andriod_project.views.LoginActivity;
 import com.example.andriod_project.views.MainHomeActivity;
 import com.example.andriod_project.views.RankingActivity;
 import com.example.andriod_project.views.SolutionActivity;
 import com.example.andriod_project.views.StoryModeActivity;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
+import static com.example.andriod_project.models.RemoteService.BASE_URL;
+
 public class StoryModeAdapter extends PagerAdapter{
+
+
+    String userStoryModeLevel;
+    int userStoryModeStage;
+
+    String userId;
+
+    Intent intent;
+
+    Retrofit retrofit;
+    RemoteService remoteService;
 
     //이미지 배열 선언
     int[] images = {R.drawable.lvbtn1, R.drawable.lvbtn2, R.drawable.lvbtn3, R.drawable.lvbtn4, R.drawable.lvbtn5,
@@ -34,8 +55,9 @@ public class StoryModeAdapter extends PagerAdapter{
     private LayoutInflater inflater;
     private Context context;
 
-    public StoryModeAdapter(Context context){
+    public StoryModeAdapter(Context context, String userId){
         this.context = context;
+        this.userId = userId;
     }
 
     //이미지 배열의 총 갯수
@@ -53,10 +75,16 @@ public class StoryModeAdapter extends PagerAdapter{
     //뷰페이저 설정 부분
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
+        retrofit = new Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create()).build();
+        remoteService = retrofit.create(RemoteService.class);
+
         inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         //레이아웃 뷰 지정.
         View v = inflater.inflate(R.layout.slide, container, false);
         //이미지 뷰 설정
+
+        getLoginUserInfo(userId);
+
         ImageView imageView = (ImageView) v.findViewById(R.id.imageView);
         //포지션에 해당하는 이미지뷰의 리소스를 가져옴.
         imageView.setImageResource(images[position]);
@@ -64,16 +92,34 @@ public class StoryModeAdapter extends PagerAdapter{
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), SolutionActivity.class);
-                ((StoryModeActivity)context).startActivity(intent);
+                Toast.makeText(v.getContext(), userId + userStoryModeLevel + userStoryModeStage +" 이다.",
+                        Toast.LENGTH_SHORT).show();
+                //intent = new Intent(v.getContext(), SolutionActivity.class);
+                //((StoryModeActivity)context).startActivity(intent);
             }
         });
         container.addView(v);
         return v;
     }
+
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
         container.invalidate();
+    }
+
+    public void getLoginUserInfo(String userId) {
+        Call<UserVO> call = remoteService.readSaveData(userId);
+        call.enqueue(new Callback<UserVO>() {
+            @Override
+            public void onResponse(Call<UserVO> call, Response<UserVO> response) {
+                UserVO userVO = response.body();
+
+                userStoryModeLevel = userVO.getUserstorymodelevel();
+                userStoryModeStage = userVO.getUserstorymodestage();
+            }
+            @Override
+            public void onFailure(Call<UserVO> call, Throwable t) { }
+        });
     }
 
 }

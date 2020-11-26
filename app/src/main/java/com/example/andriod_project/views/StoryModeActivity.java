@@ -60,11 +60,6 @@ public class StoryModeActivity extends AppCompatActivity {
         solveProblemTxt = popupView.findViewById(R.id.solveProblemTxt);
         correctProblemTxt = popupView.findViewById(R.id.correctProblemTxt);
 
-        // 뷰페이저 설정
-        viewPager = (ViewPager) findViewById(R.id.view);
-        storyModeAdapter = new StoryModeAdapter(this);
-        viewPager.setAdapter(storyModeAdapter);
-
         // 이전 페이지 intent 데이터 읽어드리기
         intent = getIntent();
         userId = intent.getStringExtra("userId");
@@ -75,6 +70,11 @@ public class StoryModeActivity extends AppCompatActivity {
         userCorrectProblem = intent.getIntExtra("userCorrectProblem", 0);
         System.out.println("---------------------\n");
         System.out.println("" + userId + "/" + userName + "/" + userNickname + "/" + userRankPoint + userSolveProblem + userCorrectProblem);
+
+        // 뷰페이저 설정
+        viewPager = (ViewPager) findViewById(R.id.view);
+        storyModeAdapter = new StoryModeAdapter(this, userId);
+        viewPager.setAdapter(storyModeAdapter);
 
         // 로그인한 유저의 닉네임을 메인 화면의 닉네임 부분에 세팅
         userNicknameTxtView.setText(userNickname);
@@ -95,7 +95,6 @@ public class StoryModeActivity extends AppCompatActivity {
                 userInfoPopup.dismiss();
             }
         });
-
     }
 
     public void storyModeSystem(View view) {
