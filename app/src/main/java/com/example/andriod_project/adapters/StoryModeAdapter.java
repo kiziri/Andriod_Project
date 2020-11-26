@@ -1,6 +1,7 @@
 package com.example.andriod_project.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,11 @@ import android.widget.Toast;
 import androidx.viewpager.widget.PagerAdapter;
 
 import com.example.andriod_project.R;
+import com.example.andriod_project.views.LoginActivity;
+import com.example.andriod_project.views.MainHomeActivity;
+import com.example.andriod_project.views.RankingActivity;
+import com.example.andriod_project.views.SolutionActivity;
+import com.example.andriod_project.views.StoryModeActivity;
 
 public class StoryModeAdapter extends PagerAdapter{
 
@@ -58,8 +64,8 @@ public class StoryModeAdapter extends PagerAdapter{
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(v.getContext(),  position + 1 +" 스테이지가 클릭되었습니다.",
-                        Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(v.getContext(), SolutionActivity.class);
+                ((StoryModeActivity)context).startActivity(intent);
             }
         });
         container.addView(v);

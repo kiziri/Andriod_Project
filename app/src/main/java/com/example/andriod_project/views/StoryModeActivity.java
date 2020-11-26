@@ -24,7 +24,7 @@ public class StoryModeActivity extends AppCompatActivity {
     StoryModeAdapter storyModeAdapter;
     ViewPager viewPager;
 
-    ImageView back, home, profileImgView, RankImgView;
+    ImageView backbtn, homebtn, profileImgView, RankImgView;
     TextView userNicknameTxtView, nicknameTxtView, idTxtView, nameTxtView, rankPointTxt, solveProblemTxt, correctProblemTxt;
     ImageButton userInfoCloseBtn;
 
@@ -34,7 +34,7 @@ public class StoryModeActivity extends AppCompatActivity {
 
     Intent intent;
     String userId, userName, userNickname;
-    int userRankPoint, userSolveProblem, userCorrectProblem;
+    int userRankPoint, userSolveProblem, userCorrectProblem, position;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,11 +44,11 @@ public class StoryModeActivity extends AppCompatActivity {
         userNicknameTxtView = findViewById(R.id.userNicknameTxtView);
 
         // 이미지 뷰 지정
-        back = (ImageView) findViewById(R.id.back);
-        home = (ImageView) findViewById(R.id.home);
+        backbtn = (ImageView) findViewById(R.id.backBtn);
+        homebtn = (ImageView) findViewById(R.id.homeBtn);
 
         // 팝업 윈도우 정의 및 구현
-        popupConstraint = findViewById(R.id.mainHomeLayout);
+        popupConstraint = findViewById(R.id.storyModeLayout);
         popupView = View.inflate(this, R.layout.popup_userinfo, null);
         userInfoPopup = new PopupWindow(popupView, WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT, true);
 
@@ -95,6 +95,7 @@ public class StoryModeActivity extends AppCompatActivity {
                 userInfoPopup.dismiss();
             }
         });
+
     }
 
     public void storyModeSystem(View view) {
@@ -104,6 +105,17 @@ public class StoryModeActivity extends AppCompatActivity {
                 userInfoPopup.showAtLocation(popupConstraint, Gravity.CENTER_HORIZONTAL|Gravity.CENTER_VERTICAL, 0, 0);
                 userInfoPopup.setAnimationStyle(-1);
                 break;
+            case R.id.rankBtn :
+                intent = new Intent(StoryModeActivity.this, RankingActivity.class);
+                intent.putExtra("userNickname", userNickname);
+                System.out.println("---------------------\n");
+                startActivity(intent);
+                onStop();
+                break;
+            case R.id.backBtn :
+                finish();
+            case R.id.homeBtn :
+                finish();
         }
     }
 }
