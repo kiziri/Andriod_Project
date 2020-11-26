@@ -16,10 +16,11 @@ import android.widget.TextView;
 
 import com.example.andriod_project.R;
 import com.example.andriod_project.adapters.ChallengeModeAdapter;
+import com.example.andriod_project.adapters.StudyModeAdapter;
 
 public class StudyModeActivity extends AppCompatActivity {
 
-    ChallengeModeAdapter adapter;
+    StudyModeAdapter adapter;
     ViewPager viewPager;
 
     ImageView back, home, profileImgView, RankImgView, categoryBtn;
@@ -61,7 +62,7 @@ public class StudyModeActivity extends AppCompatActivity {
 
         //뷰페이저 설정
         viewPager = (ViewPager) findViewById(R.id.view);
-        adapter = new ChallengeModeAdapter(this);
+        adapter = new StudyModeAdapter(this);
         viewPager.setAdapter(adapter);
 
         // 이전 페이지 intent 데이터 읽어드리기
