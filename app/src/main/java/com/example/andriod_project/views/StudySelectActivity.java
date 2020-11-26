@@ -37,17 +37,6 @@ public class StudySelectActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_study_select);
 
-        ComputerBtn = (ImageButton) findViewById(R.id.ComputerBtn);
-        CurrentEventBtn = (ImageButton) findViewById(R.id.CurrentEventBtn);
-        IdiomBtn = (ImageButton) findViewById(R.id.IdiomBtn);
-        IndustrialRevolutionBtn = (ImageButton) findViewById(R.id.IndustrialRevolutionBtn);
-        NeologismBtn = (ImageButton) findViewById(R.id.NeologismBtn);
-        PeripheralBtn = (ImageButton) findViewById(R.id.PeripheralBtn);
-        PhilosophyBtn = (ImageButton) findViewById(R.id.PhilosophyBtn);
-        PsychologyBtn = (ImageButton) findViewById(R.id.PsychologyBtn);
-        ReligionBtn = (ImageButton) findViewById(R.id.ReligionBtn);
-        ScienceBtn = (ImageButton) findViewById(R.id.ScienceBtn);
-
         mAuth = FirebaseAuth.getInstance();
 
         retrofit = new Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create()).build();
@@ -59,79 +48,64 @@ public class StudySelectActivity extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.ComputerBtn :
                 intent = new Intent(StudySelectActivity.this, SolutionActivity.class);
+                String computer = "";
+                intent.putExtra("computer",computer );
                 startActivity(intent);
                 break;
             case R.id.CurrentEventBtn :
                 intent = new Intent(StudySelectActivity.this, SolutionActivity.class);
+                String currentevens = "";
+                intent.putExtra("currentevens", currentevens);
                 startActivity(intent);
                 break;
             case R.id.IdiomBtn :
                 intent = new Intent(StudySelectActivity.this, SolutionActivity.class);
+                String idiom = "";
+                intent.putExtra("idiom", idiom);
                 startActivity(intent);
                 break;
             case R.id.IndustrialRevolutionBtn :
-                // 회원가입 화면으로 화면 전환
                 intent = new Intent(StudySelectActivity.this, SolutionActivity.class);
+                String industrialrevolution = "";
+                intent.putExtra("industrialrevolution", industrialrevolution);
                 startActivity(intent);
                 break;
             case R.id.NeologismBtn :
-                // 회원가입 화면으로 화면 전환
                 intent = new Intent(StudySelectActivity.this, SolutionActivity.class);
+                String neologism = "";
+                intent.putExtra("neologism", neologism);
                 startActivity(intent);
                 break;
             case R.id.PeripheralBtn :
-                // 회원가입 화면으로 화면 전환
                 intent = new Intent(StudySelectActivity.this, SolutionActivity.class);
+                String peripheral = "";
+                intent.putExtra("peripheral", peripheral);
                 startActivity(intent);
                 break;
             case R.id.PhilosophyBtn :
-                // 회원가입 화면으로 화면 전환
                 intent = new Intent(StudySelectActivity.this, SolutionActivity.class);
+                String philosophy = "";
+                intent.putExtra("philosophy", philosophy);
                 startActivity(intent);
                 break;
             case R.id.PsychologyBtn:
-                // 회원가입 화면으로 화면 전환
                 intent = new Intent(StudySelectActivity.this, SolutionActivity.class);
+                String psychologhy = "";
+                intent.putExtra("psychologhy", psychologhy);
                 startActivity(intent);
                 break;
             case R.id.ReligionBtn :
-                // 회원가입 화면으로 화면 전환
                 intent = new Intent(StudySelectActivity.this, SolutionActivity.class);
+                String religion = "";
+                intent.putExtra("religion", religion);
                 startActivity(intent);
                 break;
             case R.id.ScienceBtn :
-                // 회원가입 화면으로 화면 전환
                 intent = new Intent(StudySelectActivity.this, SolutionActivity.class);
+                String science = "";
+                intent.putExtra("science", science);
                 startActivity(intent);
                 break;
         }
     }
-
-    public void getQuestionInfo(String userId) {
-        Call<QuestionVO> call = remoteService.loginUser(questioned);
-        call.enqueue(new Callback<QuestionVO>() {
-            @Override
-            public void onResponse(Call<QuestionVO> call, Response<QuestionVO> response) {
-                QuestionVO QuestionVO = response.body();
-
-                System.out.println("---------------\n");
-                intent = new Intent(StudySelectActivity.this, SolutionActivity.class);
-                intent.putExtra("questionid", QuestionVO.questionid());
-                intent.putExtra("content", QuestionVO.getContent());
-                intent.putExtra("selection1", QuestionVO.getSelection1());
-                intent.putExtra("selection2", QuestionVO.getSelection2());
-                intent.putExtra("selection3", QuestionVO.getSelection3());
-                intent.putExtra("selection4", QuestionVO.getSelection4());
-                intent.putExtra("exsummary",QuestionVO.getExsummary());
-                intent.putExtra("exdetail",QuestionVO.getExdetail());
-                intent.putExtra("answer",QuestionVO.getAnswer());
-                startActivity(intent);
-                finish();
-            }
-            @Override
-            public void onFailure(Call<QuestionVO> call, Throwable t) { }
-        });
-    }
-
-
 }
