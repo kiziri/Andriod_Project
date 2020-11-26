@@ -25,6 +25,6 @@ public interface RemoteService {
     Call<QuestionVO> readQuestion(@Query("questiontype") String questiontype, @Query("questionid") int questionid);
 
     @GET("storymodesave.jsp")
-    Call<UserVO> readSaveDate(@Query("userid") String userid);
+    Call<UserVO> readSaveData(@Query("userid") String userid);
 
 }
