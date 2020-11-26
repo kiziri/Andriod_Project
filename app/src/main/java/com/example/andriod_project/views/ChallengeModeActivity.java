@@ -48,7 +48,7 @@ public class ChallengeModeActivity extends AppCompatActivity {
         userNicknameTxtView = findViewById(R.id.userNicknameTxtView);
 
         // 팝업 윈도우 정의 및 구현
-        popupConstraint = findViewById(R.id.mainHomeLayout);
+        popupConstraint = findViewById(R.id.challengeModeConstraint);
         popupView = View.inflate(this, R.layout.popup_userinfo, null);
         userInfoPopup = new PopupWindow(popupView, WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT, true);
 
