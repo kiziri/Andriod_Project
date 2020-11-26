@@ -1,21 +1,15 @@
 package com.example.andriod_project.views;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageButton;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.andriod_project.R;
-import com.example.andriod_project.models.QuestionVO;
 import com.example.andriod_project.models.RemoteService;
-import com.example.andriod_project.models.UserVO;
 import com.google.firebase.auth.FirebaseAuth;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -23,7 +17,6 @@ import static com.example.andriod_project.models.RemoteService.BASE_URL;
 
 public class StudySelectActivity extends AppCompatActivity {
 
-    ImageButton ComputerBtn, CurrentEventBtn, IdiomBtn, IndustrialRevolutionBtn, NeologismBtn, PeripheralBtn, PhilosophyBtn, PsychologyBtn, ReligionBtn, ScienceBtn;
     Intent intent;
     // 파이어베이스 접속용 변수 선언
     FirebaseAuth mAuth;
