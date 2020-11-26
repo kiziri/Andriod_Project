@@ -10,6 +10,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
@@ -24,7 +25,7 @@ public class MainHomeActivity extends AppCompatActivity {
 
     TextView userNicknameTxtView, nicknameTxtView, idTxtView, nameTxtView, rankPointTxt, solveProblemTxt, correctProblemTxt;
     ImageView profileImgView, RankImgView;
-    Button userInfoCloseBtn;
+    ImageButton userInfoCloseBtn;
 
     ConstraintLayout popupConstraint;
     PopupWindow userInfoPopup;

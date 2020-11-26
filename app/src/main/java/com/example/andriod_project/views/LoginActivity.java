@@ -107,7 +107,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onResponse(Call<UserVO> call, Response<UserVO> response) {
                 UserVO userVO = response.body();
 
-                System.out.println("---------------\n");
+                System.out.println("--------------DB 불러오기 성공\n");
                 intent = new Intent(LoginActivity.this, MainHomeActivity.class);
                 intent.putExtra("userId", userVO.getUserid());
                 intent.putExtra("userName", userVO.getUsername());
@@ -115,6 +115,7 @@ public class LoginActivity extends AppCompatActivity {
                 intent.putExtra("userRankPoint", userVO.getUserrankpoint());
                 intent.putExtra("userSolveProblem", userVO.getUsersolveproblem());
                 intent.putExtra("userCorrectProblem", userVO.getUsercorrectproblem());
+                System.out.println("--------------로그인 이동\n");
                 startActivity(intent);
                 finish();
             }

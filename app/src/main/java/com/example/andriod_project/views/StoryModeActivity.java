@@ -10,6 +10,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
@@ -25,7 +26,7 @@ public class StoryModeActivity extends AppCompatActivity {
 
     ImageView back, home, profileImgView, RankImgView;
     TextView userNicknameTxtView, nicknameTxtView, idTxtView, nameTxtView, rankPointTxt, solveProblemTxt, correctProblemTxt;
-    Button userInfoCloseBtn;
+    ImageButton userInfoCloseBtn;
 
     ConstraintLayout popupConstraint;
     PopupWindow userInfoPopup;
