@@ -101,6 +101,7 @@ public class ChallengeModeActivity extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.categoryBtn :
                 intent = new Intent(ChallengeModeActivity.this, ChallengeSelectActivity.class);
+                intent.putExtra("userId", userId);
                 intent.putExtra("userName", userName);
                 intent.putExtra("userNickname", userNickname);
                 intent.putExtra("userRankPoint", userRankPoint);

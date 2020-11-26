@@ -96,6 +96,7 @@ public class MainHomeActivity extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.storyBtn :
                 intent = new Intent(MainHomeActivity.this, StoryModeActivity.class);
+                intent.putExtra("userId", userId);
                 intent.putExtra("userName", userName);
                 intent.putExtra("userNickname", userNickname);
                 intent.putExtra("userRankPoint", userRankPoint);
