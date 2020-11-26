@@ -45,7 +45,7 @@ public class RankingAdapter extends BaseAdapter {
             }
             convertView = inflater.inflate(R.layout.item_rankinglist, parent, false);
         }
-        
+
         TextView nickname = (TextView) view.findViewById(R.id.nickName);
         TextView rankingP = (TextView) view.findViewById(R.id.rankPoint);
 
