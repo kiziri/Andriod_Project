@@ -69,6 +69,8 @@ public class RankingActivity extends AppCompatActivity {
         
         // 리스트 갱신을 위한 어댑터 호출
         getRankerInfo();
+
+
         
         //back버튼 누르면 다른 화면으로 전환
         backbtn.setOnClickListener(new View.OnClickListener() {
@@ -95,9 +97,9 @@ public class RankingActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<RankingVO>> call, Response<List<RankingVO>> response) {
                 arrayRanker = response.body();
+                System.out.println(arrayRanker.size());
                 adapter.notifyDataSetChanged();
                 System.out.println("------------랭킹");
-                listview.setAdapter(adapter);
             }
             @Override
             public void onFailure(Call<List<RankingVO>> call, Throwable t) { }
