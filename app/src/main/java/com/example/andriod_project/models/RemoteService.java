@@ -27,4 +27,7 @@ public interface RemoteService {
     @GET("storymodesave.jsp")
     Call<UserVO> readSaveData(@Query("userid") String userid);
 
+    @POST("savesotymode.jsp")
+    Call<UserVO> saveStoryModeData(@Query("userstorymodelevel") String userstorymodelevel, @Query("userstorymodestage") String userstorymodestage, @Query("userid") String userid);
+
 }
