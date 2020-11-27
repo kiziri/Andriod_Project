@@ -14,10 +14,13 @@ import java.util.List;
 
 public class RankingAdapter extends BaseAdapter {
     List<RankingVO> arrayRanker;
-    LayoutInflater inflater = null;
+    LayoutInflater inflater;
+    TextView nickname, rankingP;
 
-    public RankingAdapter(List<RankingVO> arrayRanker) {
+
+    public RankingAdapter(List<RankingVO> arrayRanker, LayoutInflater inflater) {
         this.arrayRanker = arrayRanker;
+        this.inflater = inflater;
     }
 
     @Override
@@ -27,32 +30,26 @@ public class RankingAdapter extends BaseAdapter {
 
     @Override
     public Object getItem(int i) {
-        return null;
+        return arrayRanker.get(i).getUsernickname();
     }
 
     @Override
     public long getItemId(int i) {
-        return 0;
+        return i;
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_rankinglist, parent, false);
-        if (convertView == null) {
-            final Context context = parent.getContext();
-            if (inflater == null) {
-                inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            }
-            convertView = inflater.inflate(R.layout.item_rankinglist, parent, false);
-        }
+        convertView = inflater.inflate(R.layout.item_rankinglist, parent, false);
 
-        TextView nickname = (TextView) view.findViewById(R.id.nickName);
-        TextView rankingP = (TextView) view.findViewById(R.id.rankPoint);
+        nickname = convertView.findViewById(R.id.nickName);
+        rankingP = convertView.findViewById(R.id.rankPoint);
 
 
         nickname.setText(arrayRanker.get(position).getUsernickname());
         rankingP.setText(""+arrayRanker.get(position).getUserrankpoint());
+        System.out.println("-------------어댑터 셋팅\n");
 
-        return view;
+        return convertView;
     }
 }

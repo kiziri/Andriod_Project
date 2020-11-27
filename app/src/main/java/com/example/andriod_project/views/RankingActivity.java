@@ -2,6 +2,7 @@ package com.example.andriod_project.views;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -27,11 +28,13 @@ import static com.example.andriod_project.models.RemoteService.BASE_URL;
 
 public class RankingActivity extends AppCompatActivity {
 
-    private ListView listview;
+    ListView listview;
+
     // mySQL 접근용 변수 선언
     Retrofit retrofit;
     RemoteService remoteService;
     List<RankingVO> arrayRanker;
+    LayoutInflater inflater;
     RankingAdapter adapter;
 
     TextView userNicknameTxtView;
@@ -51,18 +54,18 @@ public class RankingActivity extends AppCompatActivity {
         intent = getIntent();
         userNickname = intent.getStringExtra("userNickname");
 
+        retrofit = new Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create()).build();
+        remoteService = retrofit.create(RemoteService.class);
+
         // 로그인한 유저의 닉네임을 메인 화면의 닉네임 부분에 세팅
         userNicknameTxtView.setText(userNickname);
 
         //Listview, Adapter 생성 및 연결
         listview = (ListView)findViewById(R.id.listView1);
         arrayRanker = new ArrayList<>();
-        adapter = new RankingAdapter(arrayRanker);  // 어댑터 클래스가 외부에 선언되어 있으므로, 이를 무엇이 가져가는지 확인하기 위해
+        inflater = getLayoutInflater();
+        adapter = new RankingAdapter(arrayRanker, inflater);  // 어댑터 클래스가 외부에 선언되어 있으므로, 이를 무엇이 가져가는지 확인하기 위해
         listview.setAdapter(adapter);
-
-
-        retrofit = new Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create()).build();
-        remoteService = retrofit.create(RemoteService.class);
         
         // 리스트 갱신을 위한 어댑터 호출
         getRankerInfo();
