@@ -1,12 +1,11 @@
 package com.example.andriod_project.views;
 
+import android.content.Intent;
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.content.Intent;
-import android.os.Bundle;
-import android.widget.LinearLayout;
 
 import com.example.andriod_project.R;
 import com.example.andriod_project.adapters.RecyclerSolutionAdapter;
@@ -47,22 +46,20 @@ public class RecyclerSolutionActivity extends AppCompatActivity {
         retrofit = new Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create()).build();
         remoteService = retrofit.create(RemoteService.class);
 
-        // RecyclerView 정의
-        challengeModeSolution = findViewById(R.id.solutionRecyclerView);
-        challengeModeSolution.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-
         // 문제 데이터 저장하기 위한 ArrayList 정의
         arrayQuestionList = new ArrayList<QuestionVO>();
-        solutionAdapter = new RecyclerSolutionAdapter(arrayQuestionList, this);
+        solutionAdapter = new RecyclerSolutionAdapter(this, arrayQuestionList);
+
+        // RecyclerView 정의
+        challengeModeSolution = findViewById(R.id.solutionRecyclerView);
+        challengeModeSolution.setLayoutManager(new LinearLayoutManager(RecyclerSolutionActivity.this, LinearLayoutManager.HORIZONTAL, false));
+
         challengeModeSolution.setAdapter(solutionAdapter);
-
-
         getQuestionData(questionCategory);
     }
 
     public void getQuestionData(String questionCategory) {
         arrayQuestionList.clear();
-
         Call<ArrayList<QuestionVO>> call = remoteService.challengemodequestion(questionCategory);
         call.enqueue(new Callback<ArrayList<QuestionVO>>() {
             @Override

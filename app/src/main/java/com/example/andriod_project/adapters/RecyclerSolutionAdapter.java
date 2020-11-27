@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -19,15 +18,20 @@ import com.example.andriod_project.models.QuestionVO;
 import java.util.ArrayList;
 
 public class RecyclerSolutionAdapter extends RecyclerView.Adapter<RecyclerSolutionAdapter.ViewHolder> {
-    ArrayList<QuestionVO> arrayQuestionList = new ArrayList<QuestionVO>();
     Context context;
+    ArrayList<QuestionVO> arrayQuestionList = null;
 
-    public RecyclerSolutionAdapter(ArrayList<QuestionVO> arrayQuestionList, Context context) {
-        this.arrayQuestionList = arrayQuestionList;
+    public RecyclerSolutionAdapter(Context context, ArrayList<QuestionVO> arrayQuestionList) {
         this.context = context;
+        this.arrayQuestionList = arrayQuestionList;
     }
 
-    @NonNull
+    @Override
+    public int getItemCount() {
+        System.out.println(arrayQuestionList.size());
+        return arrayQuestionList.size();
+    }
+
     @Override
     public RecyclerSolutionAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_recycler_solution, parent, false);
@@ -45,12 +49,6 @@ public class RecyclerSolutionAdapter extends RecyclerView.Adapter<RecyclerSoluti
         holder.selectionRadio3.setText(arrayQuestionList.get(position).getSelection3());
         holder.selectionRadio4.setText(arrayQuestionList.get(position).getSelection4());
 
-    }
-
-    @Override
-    public int getItemCount() {
-        System.out.println(arrayQuestionList.size());
-        return arrayQuestionList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
