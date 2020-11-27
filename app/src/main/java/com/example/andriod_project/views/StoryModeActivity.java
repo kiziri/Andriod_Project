@@ -34,7 +34,7 @@ public class StoryModeActivity extends AppCompatActivity {
 
     Intent intent;
     String userId, userName, userNickname;
-    int userRankPoint, userSolveProblem, userCorrectProblem, position;
+    int userRankPoint, userSolveProblem, userCorrectProblem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,7 +73,8 @@ public class StoryModeActivity extends AppCompatActivity {
 
         // 뷰페이저 설정
         viewPager = (ViewPager) findViewById(R.id.view);
-        storyModeAdapter = new StoryModeAdapter(this, userId);
+        storyModeAdapter = new StoryModeAdapter(this, userId, userName, userNickname, userRankPoint,
+                userSolveProblem, userCorrectProblem);
         viewPager.setAdapter(storyModeAdapter);
 
         // 로그인한 유저의 닉네임을 메인 화면의 닉네임 부분에 세팅

@@ -102,24 +102,13 @@
             android:layout_gravity="right"
             android:src="@drawable/home_btn" />
 
-        <TextView
-            android:id="@+id/leveltext"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_marginTop="100dp"
-            android:gravity="center"
-            android:text="현재 난이도 : 하"
-            android:textColor="#FFFFFF"
-            android:textSize="50dp"
-            android:textStyle="bold" />
     </RelativeLayout>
 
     <view
         android:id="@+id/view"
         class="androidx.viewpager.widget.ViewPager"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginTop="50dp"
+        android:layout_height="500dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"

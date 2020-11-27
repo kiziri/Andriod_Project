@@ -7,11 +7,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.viewpager.widget.PagerAdapter;
 
 import com.example.andriod_project.R;
+import com.example.andriod_project.models.QuestionVO;
 import com.example.andriod_project.models.RemoteService;
 import com.example.andriod_project.models.UserVO;
 import com.example.andriod_project.views.LoginActivity;
@@ -30,11 +32,10 @@ import static com.example.andriod_project.models.RemoteService.BASE_URL;
 
 public class StoryModeAdapter extends PagerAdapter{
 
+    String userStoryModeLevel, userId, userName, userNickname;
+    int userStoryModeStage, userRankPoint, userSolveProblem, userCorrectProblem;
 
-    String userStoryModeLevel;
-    int userStoryModeStage;
-
-    String userId;
+    String easy = "easy", mid = "mid", hard = "hard";
 
     Intent intent;
 
@@ -52,12 +53,19 @@ public class StoryModeAdapter extends PagerAdapter{
             R.drawable.lvbtn36, R.drawable.lvbtn37, R.drawable.lvbtn38, R.drawable.lvbtn39, R.drawable.lvbtn40,
             R.drawable.lvbtn41, R.drawable.lvbtn42, R.drawable.lvbtn43, R.drawable.lvbtn44, R.drawable.lvbtn45,
             R.drawable.lvbtn46, R.drawable.lvbtn47, R.drawable.lvbtn48, R.drawable.lvbtn49, R.drawable.lvbtn50,};
+    int[] clearimage = {R.drawable.clear};
     private LayoutInflater inflater;
     private Context context;
 
-    public StoryModeAdapter(Context context, String userId){
+    public StoryModeAdapter(Context context, String userId, String userName, String userNickname,
+                            int userRankPoint, int userSolveProblem, int userCorrectProblem){
         this.context = context;
         this.userId = userId;
+        this.userName = userName;
+        this.userNickname = userNickname;
+        this.userRankPoint = userRankPoint;
+        this.userSolveProblem = userSolveProblem;
+        this.userCorrectProblem = userCorrectProblem;
     }
 
     //이미지 배열의 총 갯수
@@ -81,21 +89,39 @@ public class StoryModeAdapter extends PagerAdapter{
         inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         //레이아웃 뷰 지정.
         View v = inflater.inflate(R.layout.slide, container, false);
-        //이미지 뷰 설정
 
-        getLoginUserInfo(userId);
+        getLoginUserInfo(userId, v, position);
 
         ImageView imageView = (ImageView) v.findViewById(R.id.imageView);
         //포지션에 해당하는 이미지뷰의 리소스를 가져옴.
         imageView.setImageResource(images[position]);
+
         //이미지뷰의 클릭리스너
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(v.getContext(), userId + userStoryModeLevel + userStoryModeStage +" 이다.",
-                        Toast.LENGTH_SHORT).show();
-                //intent = new Intent(v.getContext(), SolutionActivity.class);
-                //((StoryModeActivity)context).startActivity(intent);
+                if(position + 1 < userStoryModeStage) {
+                    Toast.makeText(v.getContext(), "클리어한 스테이지입니다.",
+                            Toast.LENGTH_SHORT).show();
+                }
+                if(position + 1 == userStoryModeStage) {
+                    intent = new Intent(v.getContext(), SolutionActivity.class);
+                    intent.putExtra("userId", userId);
+                    intent.putExtra("userName", userName);
+                    intent.putExtra("userNickname", userNickname);
+                    intent.putExtra("userRankPoint", userRankPoint);
+                    intent.putExtra("userSolveProblem", userSolveProblem);
+                    intent.putExtra("userCorrectProblem", userCorrectProblem);
+                    intent.putExtra("userstorymodelevel", userStoryModeLevel);
+                    intent.putExtra("userstorymodestage", userStoryModeStage);
+                    ((StoryModeActivity)context).startActivity(intent);
+                    ((StoryModeActivity)context).finish();
+
+                }
+                if(position + 1 > userStoryModeStage){
+                    Toast.makeText(v.getContext(), "이전 스테이지를 먼저 클리어해주세요.",
+                            Toast.LENGTH_SHORT).show();
+                }
             }
         });
         container.addView(v);
@@ -107,7 +133,7 @@ public class StoryModeAdapter extends PagerAdapter{
         container.invalidate();
     }
 
-    public void getLoginUserInfo(String userId) {
+    public void getLoginUserInfo(String userId, View v, int position) {
         Call<UserVO> call = remoteService.readSaveData(userId);
         call.enqueue(new Callback<UserVO>() {
             @Override
@@ -116,10 +142,22 @@ public class StoryModeAdapter extends PagerAdapter{
 
                 userStoryModeLevel = userVO.getUserstorymodelevel();
                 userStoryModeStage = userVO.getUserstorymodestage();
+
+                if(position + 1 < userStoryModeStage){
+                    ImageView imageView = (ImageView) v.findViewById(R.id.imageView);
+                    imageView.setImageResource(images[position] = clearimage[0]);
+                }
+
+                TextView T1 = (TextView) v.findViewById(R.id.leveltext);
+                if(userStoryModeLevel.equals(easy)){
+                    T1.setText("현재 난이도 : 하");}
+                if(userStoryModeLevel.equals(mid)){
+                    T1.setText("현재 난이도 : 중");}
+                if(userStoryModeLevel.equals(hard)){
+                    T1.setText("현재 난이도 : 상");}
             }
             @Override
             public void onFailure(Call<UserVO> call, Throwable t) { }
         });
     }
-
 }
