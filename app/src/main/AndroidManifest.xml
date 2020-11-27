@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Andriod_Project"
         android:usesCleartextTraffic="true">
-        <activity android:name=".views.ChallengeSelectActivity"></activity>
+        <activity android:name=".views.RecyclerSolutionActivity"></activity>
+        <activity android:name=".views.ChallengeSelectActivity" />
         <activity android:name=".views.StudyModeActivity" />
         <activity android:name=".views.RankingActivity" />
         <activity android:name=".views.ChallengeModeActivity" />
@@ -21,7 +22,7 @@
         <activity android:name=".views.JoinActivity" />
         <activity android:name=".views.MainHomeActivity" />
         <activity android:name=".views.StudySelectActivity" />
-        <activity android:name=".views.SolutionActivity"/>
+        <activity android:name=".views.SolutionActivity" />
         <activity android:name=".views.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
