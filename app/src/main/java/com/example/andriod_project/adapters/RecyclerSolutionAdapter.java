@@ -19,7 +19,7 @@ import com.example.andriod_project.models.QuestionVO;
 import java.util.ArrayList;
 
 public class RecyclerSolutionAdapter extends RecyclerView.Adapter<RecyclerSolutionAdapter.ViewHolder> {
-    ArrayList<QuestionVO> arrayQuestionList;
+    ArrayList<QuestionVO> arrayQuestionList = new ArrayList<QuestionVO>();
     Context context;
 
     public RecyclerSolutionAdapter(ArrayList<QuestionVO> arrayQuestionList, Context context) {
@@ -49,6 +49,7 @@ public class RecyclerSolutionAdapter extends RecyclerView.Adapter<RecyclerSoluti
 
     @Override
     public int getItemCount() {
+        System.out.println(arrayQuestionList.size());
         return arrayQuestionList.size();
     }
 

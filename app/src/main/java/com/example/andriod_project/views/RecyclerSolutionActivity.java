@@ -57,7 +57,6 @@ public class RecyclerSolutionActivity extends AppCompatActivity {
         challengeModeSolution.setAdapter(solutionAdapter);
 
 
-
         getQuestionData(questionCategory);
     }
 
