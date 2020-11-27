@@ -36,16 +36,7 @@ public class RecyclerSolutionAdapter extends RecyclerView.Adapter<RecyclerSoluti
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerSolutionAdapter.ViewHolder holder, int position) {
-        LinearLayout.LayoutParams prmQuestionContent = (LinearLayout.LayoutParams) holder.questionTextView.getLayoutParams();
-        LinearLayout.LayoutParams prmQuestionExSummary = (LinearLayout.LayoutParams) holder.questionTextView.getLayoutParams();
-        LinearLayout.LayoutParams prmQuestionExDetail = (LinearLayout.LayoutParams) holder.questionTextView.getLayoutParams();
-        LinearLayout.LayoutParams prmQuestionExSummaryBtn = (LinearLayout.LayoutParams) holder.questionTextView.getLayoutParams();
-        LinearLayout.LayoutParams prmQuestionExDetailBtn = (LinearLayout.LayoutParams) holder.questionTextView.getLayoutParams();
-        LinearLayout.LayoutParams prmQuestionSelection1 = (LinearLayout.LayoutParams) holder.questionTextView.getLayoutParams();
-        LinearLayout.LayoutParams prmQuestionSelection2 = (LinearLayout.LayoutParams) holder.questionTextView.getLayoutParams();
-        LinearLayout.LayoutParams prmQuestionSelection3 = (LinearLayout.LayoutParams) holder.questionTextView.getLayoutParams();
-        LinearLayout.LayoutParams prmQuestionSelection4 = (LinearLayout.LayoutParams) holder.questionTextView.getLayoutParams();
-
+        System.out.println("---------------문제 출력\n");
         holder.questionTextView.setText(arrayQuestionList.get(position).getContent());
         holder.summaryText.setText(arrayQuestionList.get(position).getExsummary());
         holder.detailText.setText(arrayQuestionList.get(position).getExdetail());
@@ -53,6 +44,7 @@ public class RecyclerSolutionAdapter extends RecyclerView.Adapter<RecyclerSoluti
         holder.selectionRadio2.setText(arrayQuestionList.get(position).getSelection2());
         holder.selectionRadio3.setText(arrayQuestionList.get(position).getSelection3());
         holder.selectionRadio4.setText(arrayQuestionList.get(position).getSelection4());
+
     }
 
     @Override
