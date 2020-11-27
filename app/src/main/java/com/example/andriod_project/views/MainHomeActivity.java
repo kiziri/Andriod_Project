@@ -109,6 +109,7 @@ public class MainHomeActivity extends AppCompatActivity {
                 break;
             case R.id.challengeBtn :
                 intent = new Intent(MainHomeActivity.this, ChallengeModeActivity.class);
+                intent.putExtra("userId", userId);
                 intent.putExtra("userName", userName);
                 intent.putExtra("userNickname", userNickname);
                 intent.putExtra("userRankPoint", userRankPoint);
@@ -121,6 +122,7 @@ public class MainHomeActivity extends AppCompatActivity {
                 break;
             case R.id.studyBtn :
                 intent = new Intent(MainHomeActivity.this, StudyModeActivity.class);
+                intent.putExtra("userId", userId);
                 intent.putExtra("userName", userName);
                 intent.putExtra("userNickname", userNickname);
                 intent.putExtra("userRankPoint", userRankPoint);
