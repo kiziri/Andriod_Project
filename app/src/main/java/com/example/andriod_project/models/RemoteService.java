@@ -1,5 +1,6 @@
 package com.example.andriod_project.models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -23,6 +24,9 @@ public interface RemoteService {
 
     @GET("storymodequestion.jsp")
     Call<QuestionVO> storymodequestion(@Query("questioncategory") String questioncategory, @Query("questionid") int questionid);
+
+    @GET("challengemodequestion.jsp")
+    Call<ArrayList<QuestionVO>> challengemodequestion(@Query("questioncategory") String questioncategory);
 
     @GET("storymodesave.jsp")
     Call<UserVO> readSaveData(@Query("userid") String userid);
