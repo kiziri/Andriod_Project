@@ -55,11 +55,6 @@ public class ChallengeModeActivity extends AppCompatActivity {
         solveProblemTxt = popupView.findViewById(R.id.solveProblemTxt);
         correctProblemTxt = popupView.findViewById(R.id.correctProblemTxt);
 
-        //뷰페이저 설정
-        viewPager = (ViewPager) findViewById(R.id.view);
-        adapter = new ChallengeModeAdapter(this);
-        viewPager.setAdapter(adapter);
-
         // 이전 페이지 intent 데이터 읽어드리기
         intent = getIntent();
         userId = intent.getStringExtra("userId");
@@ -73,6 +68,11 @@ public class ChallengeModeActivity extends AppCompatActivity {
 
         // 로그인한 유저의 닉네임을 메인 화면의 닉네임 부분에 세팅
         userNicknameTxtView.setText(userNickname);
+
+        //뷰페이저 설정
+        viewPager = (ViewPager) findViewById(R.id.view);
+        adapter = new ChallengeModeAdapter(this, userId);
+        viewPager.setAdapter(adapter);
 
         // 유저 정보 팝업 윈도우에 정보 세팅
         nicknameTxtView.setText(userNickname);
@@ -105,7 +105,6 @@ public class ChallengeModeActivity extends AppCompatActivity {
                 System.out.println("---------------------\n");
                 System.out.println("" + userId + "/" + userName + "/" + userNickname + "/" + userRankPoint + userSolveProblem + userCorrectProblem);
                 startActivity(intent);
-                onStop();
                 break;
             case R.id.userNicknameTxtView :
             case R.id.profileImgVIew :
