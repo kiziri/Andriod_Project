@@ -48,13 +48,10 @@ public class RecyclerSolutionActivity extends AppCompatActivity {
 
         // 문제 데이터 저장하기 위한 ArrayList 정의
         arrayQuestionList = new ArrayList<QuestionVO>();
-        solutionAdapter = new RecyclerSolutionAdapter(this, arrayQuestionList);
 
-        // RecyclerView 정의
         challengeModeSolution = findViewById(R.id.solutionRecyclerView);
         challengeModeSolution.setLayoutManager(new LinearLayoutManager(RecyclerSolutionActivity.this, LinearLayoutManager.HORIZONTAL, false));
 
-        challengeModeSolution.setAdapter(solutionAdapter);
         getQuestionData(questionCategory);
     }
 
@@ -64,10 +61,12 @@ public class RecyclerSolutionActivity extends AppCompatActivity {
         call.enqueue(new Callback<ArrayList<QuestionVO>>() {
             @Override
             public void onResponse(Call<ArrayList<QuestionVO>> call, Response<ArrayList<QuestionVO>> response) {
-                System.out.println("---------------문제 불러오기\n");
+
                 arrayQuestionList = response.body();
+                solutionAdapter = new RecyclerSolutionAdapter(getApplicationContext(), arrayQuestionList);
+                // RecyclerView 정의
                 System.out.println(arrayQuestionList.size());
-                solutionAdapter.notifyDataSetChanged();
+                challengeModeSolution.setAdapter(solutionAdapter);
 
             }
             @Override
