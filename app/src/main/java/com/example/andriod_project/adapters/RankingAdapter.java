@@ -15,7 +15,7 @@ import java.util.List;
 public class RankingAdapter extends BaseAdapter {
     List<RankingVO> arrayRanker;
     LayoutInflater inflater;
-    TextView nickname, rankingP;
+    TextView nickname, rankingP, ranking;
 
 
     public RankingAdapter(List<RankingVO> arrayRanker, LayoutInflater inflater) {
@@ -25,30 +25,31 @@ public class RankingAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
+        System.out.println("getCount : "+arrayRanker.size());
         return arrayRanker.size();
     }
 
     @Override
     public Object getItem(int i) {
-        return arrayRanker.get(i).getUsernickname();
+        return null;
     }
 
     @Override
     public long getItemId(int i) {
-        return i;
+        return 0;
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         convertView = inflater.inflate(R.layout.item_rankinglist, parent, false);
 
+        ranking = convertView.findViewById(R.id.rankingNum);
         nickname = convertView.findViewById(R.id.nickName);
         rankingP = convertView.findViewById(R.id.rankPoint);
 
-
+        ranking.setText(""+(position+1));
         nickname.setText(arrayRanker.get(position).getUsernickname());
         rankingP.setText(""+arrayRanker.get(position).getUserrankpoint());
-        System.out.println("-------------어댑터 셋팅\n");
 
         return convertView;
     }

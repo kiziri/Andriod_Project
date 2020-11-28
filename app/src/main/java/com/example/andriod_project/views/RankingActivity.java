@@ -64,14 +64,11 @@ public class RankingActivity extends AppCompatActivity {
         listview = (ListView)findViewById(R.id.listView1);
         arrayRanker = new ArrayList<>();
         inflater = getLayoutInflater();
-        adapter = new RankingAdapter(arrayRanker, inflater);  // 어댑터 클래스가 외부에 선언되어 있으므로, 이를 무엇이 가져가는지 확인하기 위해
-        listview.setAdapter(adapter);
-        
+        // 어댑터 클래스가 외부에 선언되어 있으므로, 이를 무엇이 가져가는지 확인하기 위해
+
         // 리스트 갱신을 위한 어댑터 호출
         getRankerInfo();
 
-
-        
         //back버튼 누르면 다른 화면으로 전환
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,9 +94,9 @@ public class RankingActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<RankingVO>> call, Response<List<RankingVO>> response) {
                 arrayRanker = response.body();
+                adapter = new RankingAdapter(arrayRanker, inflater);
                 System.out.println(arrayRanker.size());
-                adapter.notifyDataSetChanged();
-                System.out.println("------------랭킹");
+                listview.setAdapter(adapter);
             }
             @Override
             public void onFailure(Call<List<RankingVO>> call, Throwable t) { }
