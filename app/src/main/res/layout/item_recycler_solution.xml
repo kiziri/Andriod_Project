@@ -125,8 +125,25 @@
                 android:visibility="gone"
                 tools:visibility="visible" />
 
-        </LinearLayout>
+            <ImageButton
+                android:id="@+id/nextQuestionBtn"
+                android:layout_width="200dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/nextquestion"
+                android:text="nextQuestion" />
 
+            <ImageButton
+                android:id="@+id/backBtn"
+                android:layout_width="200dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/backstage"
+                android:text="backstage" />
+
+        </LinearLayout>
     </ScrollView>
 
 </LinearLayout>
