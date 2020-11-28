@@ -61,13 +61,11 @@ public class RecyclerSolutionActivity extends AppCompatActivity {
         call.enqueue(new Callback<ArrayList<QuestionVO>>() {
             @Override
             public void onResponse(Call<ArrayList<QuestionVO>> call, Response<ArrayList<QuestionVO>> response) {
-
                 arrayQuestionList = response.body();
                 solutionAdapter = new RecyclerSolutionAdapter(getApplicationContext(), arrayQuestionList);
                 // RecyclerView 정의
                 System.out.println(arrayQuestionList.size());
                 challengeModeSolution.setAdapter(solutionAdapter);
-
             }
             @Override
             public void onFailure(Call<ArrayList<QuestionVO>> call, Throwable t) { }
