@@ -23,7 +23,6 @@ public class ChallengeModeActivity extends AppCompatActivity {
     ChallengeModeAdapter adapter;
     ViewPager viewPager;
 
-    ImageView back, home, profileImgView, RankImgView, categoryBtn;
     TextView userNicknameTxtView, nicknameTxtView, idTxtView, nameTxtView, rankPointTxt, solveProblemTxt, correctProblemTxt;
     ImageButton userInfoCloseBtn;
 
@@ -40,10 +39,6 @@ public class ChallengeModeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_challenge_mode);
 
-        //이미지뷰 지정
-        back = (ImageView) findViewById(R.id.back);
-        home = (ImageView) findViewById(R.id.home);
-        categoryBtn = (ImageView) findViewById(R.id.categoryBtn);
 
         userNicknameTxtView = findViewById(R.id.userNicknameTxtView);
 
@@ -117,6 +112,10 @@ public class ChallengeModeActivity extends AppCompatActivity {
                 userInfoPopup.showAtLocation(popupConstraint, Gravity.CENTER_HORIZONTAL|Gravity.CENTER_VERTICAL, 0, 0);
                 userInfoPopup.setAnimationStyle(-1);
                 break;
+            case R.id.backBtn :
+                finish();
+            case R.id.homeBtn :
+                finish();
         }
     }
 }
