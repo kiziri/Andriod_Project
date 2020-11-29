@@ -19,12 +19,15 @@ public class ChallengeModeAdapter extends PagerAdapter {
 
     //이미지가 들어가는 배열
     int[] images = {R.drawable.easy_btn, R.drawable.normal_btn, R.drawable.hard_btn};
+    Intent intent;
 
     private LayoutInflater inflater;
     private Context context;
+    private String userId;
 
-    public ChallengeModeAdapter(Context context) {
+    public ChallengeModeAdapter(Context context, String userId) {
         this.context = context;
+        this.userId = userId;
     }
 
     //이미지 배열 총 갯수
@@ -73,15 +76,24 @@ public class ChallengeModeAdapter extends PagerAdapter {
                 switch (position) {
                     case 0:
                         questionCategory = "easyquestion";
-                        Intent intent = new Intent(context, RecyclerSolutionActivity.class);
+                        intent = new Intent(context, RecyclerSolutionActivity.class);
                         intent.putExtra("questionCategory", questionCategory);
+                        intent.putExtra("userId", userId);
                         context.startActivity(intent);
                         break;
                     case 1:
-                        Toast.makeText(v.getContext(), " 보통이 선택되었다.", Toast.LENGTH_SHORT).show();
+                        questionCategory = "midquestion";
+                        intent = new Intent(context, RecyclerSolutionActivity.class);
+                        intent.putExtra("questionCategory", questionCategory);
+                        intent.putExtra("userId", userId);
+                        context.startActivity(intent);
                         break;
                     case 2:
-                        Toast.makeText(v.getContext(), " 어려움이 선택되었다.", Toast.LENGTH_SHORT).show();
+                        questionCategory = "hardquestion";
+                        intent = new Intent(context, RecyclerSolutionActivity.class);
+                        intent.putExtra("questionCategory", questionCategory);
+                        intent.putExtra("userId", userId);
+                        context.startActivity(intent);
                         break;
                     default:
                         Toast.makeText(v.getContext(), " 잘못된 선택이다.", Toast.LENGTH_SHORT).show();

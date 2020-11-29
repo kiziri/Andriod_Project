@@ -32,7 +32,7 @@ public class RecyclerSolutionActivity extends AppCompatActivity {
     RemoteService remoteService;
 
     Intent intent;
-    String questionCategory;
+    String questionCategory, userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +41,7 @@ public class RecyclerSolutionActivity extends AppCompatActivity {
 
         intent = getIntent();
         questionCategory = intent.getStringExtra("questionCategory");
+        userId = intent.getStringExtra("userId");
 
         // MySQL 접속 연동 정의 구현
         retrofit = new Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create()).build();
@@ -62,7 +63,7 @@ public class RecyclerSolutionActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<ArrayList<QuestionVO>> call, Response<ArrayList<QuestionVO>> response) {
                 arrayQuestionList = response.body();
-                solutionAdapter = new RecyclerSolutionAdapter(getApplicationContext(), arrayQuestionList);
+                solutionAdapter = new RecyclerSolutionAdapter(getApplicationContext(), arrayQuestionList, userId);
                 // RecyclerView 정의
                 System.out.println(arrayQuestionList.size());
                 challengeModeSolution.setAdapter(solutionAdapter);
