@@ -105,6 +105,7 @@ public class ChallengeModeActivity extends AppCompatActivity {
                 System.out.println("---------------------\n");
                 System.out.println("" + userId + "/" + userName + "/" + userNickname + "/" + userRankPoint + userSolveProblem + userCorrectProblem);
                 startActivity(intent);
+                onStop();
                 break;
             case R.id.userNicknameTxtView :
             case R.id.profileImgVIew :
