@@ -80,7 +80,8 @@ public class RankingActivity extends AppCompatActivity {
         //home버튼 누르면 다른 화면으로 전환
         homebtn.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
-
+                intent = new Intent(RankingActivity.this, MainHomeActivity.class);
+                startActivity(intent);
                 finish();
             }
         });
