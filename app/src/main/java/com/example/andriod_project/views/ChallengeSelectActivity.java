@@ -22,6 +22,7 @@ public class ChallengeSelectActivity extends AppCompatActivity {
     TextView userNicknameTxtView, nicknameTxtView, idTxtView, nameTxtView, rankPointTxt, solveProblemTxt, correctProblemTxt;
     ImageButton userInfoCloseBtn;
 
+
     Intent intent;
     String userId, userName, userNickname;
     int userRankPoint, userSolveProblem, userCorrectProblem;
@@ -61,7 +62,6 @@ public class ChallengeSelectActivity extends AppCompatActivity {
         userNicknameTxtView.setText(userNickname);
 
 
-
         // 유저 정보 팝업 윈도우에 정보 세팅
         nicknameTxtView.setText(userNickname);
         idTxtView.setText(userId);
@@ -80,67 +80,102 @@ public class ChallengeSelectActivity extends AppCompatActivity {
         });
     }
 
-    public void studyModeQuestionButtonSystem(View view) {
+    public void challengeModeQuestionButtonSystem(View view) {
         switch (view.getId()) {
             case R.id.ComputerBtn :
-                intent = new Intent(ChallengeSelectActivity.this, SolutionActivity.class);
-                String computer = "";
-                intent.putExtra("computer", computer);
+                String computer = "computer";
+                intent = new Intent(ChallengeSelectActivity.this, RecyclerSolutionActivity.class);
+                intent.putExtra("questionCategory", computer);
+                intent.putExtra("userId", userId);
                 startActivity(intent);
+                onStop();
                 break;
             case R.id.CurrentEventBtn :
-                intent = new Intent(ChallengeSelectActivity.this, SolutionActivity.class);
+                intent = new Intent(ChallengeSelectActivity.this, RecyclerSolutionActivity.class);
                 String currentevens = "";
-                intent.putExtra("currentevens", currentevens);
+                intent.putExtra("questionCategory", currentevens);
+                intent.putExtra("userId", userId);
                 startActivity(intent);
+                onStop();
                 break;
             case R.id.IdiomBtn :
-                intent = new Intent(ChallengeSelectActivity.this, SolutionActivity.class);
-                String idiom = "";
-                intent.putExtra("idiom", idiom);
+                intent = new Intent(ChallengeSelectActivity.this, RecyclerSolutionActivity.class);
+                String idiom = "idiom";
+                intent.putExtra("questionCategory", idiom);
+                intent.putExtra("userId", userId);
                 startActivity(intent);
+                onStop();
                 break;
             case R.id.IndustrialRevolutionBtn :
-                intent = new Intent(ChallengeSelectActivity.this, SolutionActivity.class);
-                String industrialrevolution = "";
-                intent.putExtra("industrialrevolution", industrialrevolution);
+                intent = new Intent(ChallengeSelectActivity.this, RecyclerSolutionActivity.class);
+                String industrialrevolution = "industrialrevolution";
+                intent.putExtra("questionCategory", industrialrevolution);
+                intent.putExtra("userId", userId);
                 startActivity(intent);
+                onStop();
                 break;
             case R.id.NeologismBtn :
-                intent = new Intent(ChallengeSelectActivity.this, SolutionActivity.class);
-                String neologism = "";
-                intent.putExtra("neologism", neologism);
+                intent = new Intent(ChallengeSelectActivity.this, RecyclerSolutionActivity.class);
+                String neologism = "neologism";
+                intent.putExtra("questionCategory", neologism);
+                intent.putExtra("userId", userId);
                 startActivity(intent);
+                onStop();
                 break;
             case R.id.PeripheralBtn :
-                intent = new Intent(ChallengeSelectActivity.this, SolutionActivity.class);
-                String peripheral = "";
-                intent.putExtra("peripheral", peripheral);
+                intent = new Intent(ChallengeSelectActivity.this, RecyclerSolutionActivity.class);
+                String peripheral = "peripheral";
+                intent.putExtra("questionCategory", peripheral);
+                intent.putExtra("userId", userId);
                 startActivity(intent);
+                onStop();
                 break;
             case R.id.PhilosophyBtn :
-                intent = new Intent(ChallengeSelectActivity.this, SolutionActivity.class);
-                String philosophy = "";
-                intent.putExtra("philosophy", philosophy);
+                intent = new Intent(ChallengeSelectActivity.this, RecyclerSolutionActivity.class);
+                String philosophy = "philosophy";
+                intent.putExtra("questionCategory", philosophy);
+                intent.putExtra("userId", userId);
                 startActivity(intent);
+                onStop();
                 break;
             case R.id.PsychologyBtn:
-                intent = new Intent(ChallengeSelectActivity.this, SolutionActivity.class);
-                String psychologhy = "";
-                intent.putExtra("psychologhy", psychologhy);
+                intent = new Intent(ChallengeSelectActivity.this, RecyclerSolutionActivity.class);
+                String psychologhy = "psychologhy";
+                intent.putExtra("questionCategory", psychologhy);
+                intent.putExtra("userId", userId);
                 startActivity(intent);
+                onStop();
                 break;
             case R.id.ReligionBtn :
-                intent = new Intent(ChallengeSelectActivity.this, SolutionActivity.class);
-                String religion = "";
-                intent.putExtra("religion", religion);
+                intent = new Intent(ChallengeSelectActivity.this, RecyclerSolutionActivity.class);
+                String religion = "religion";
+                intent.putExtra("questionCategory", religion);
+                intent.putExtra("userId", userId);
                 startActivity(intent);
+                onStop();
                 break;
             case R.id.ScienceBtn :
-                intent = new Intent(ChallengeSelectActivity.this, SolutionActivity.class);
-                String science = "";
-                intent.putExtra("science", science);
+                intent = new Intent(ChallengeSelectActivity.this, RecyclerSolutionActivity.class);
+                String science = "science";
+                intent.putExtra("questionCategory", science);
+                intent.putExtra("userId", userId);
                 startActivity(intent);
+                onStop();
+                break;
+            case R.id.back :
+                finish();
+                break;
+            case R.id.home :
+                intent = new Intent(ChallengeSelectActivity.this, MainHomeActivity.class);
+                startActivity(intent);
+                finish();
+                break;
+            case R.id.rankBtn :
+                intent = new Intent(ChallengeSelectActivity.this, RankingActivity.class);
+                intent.putExtra("userNickname", userNickname);
+                System.out.println("---------------------\n");
+                startActivity(intent);
+                onStop();
                 break;
         }
     }
