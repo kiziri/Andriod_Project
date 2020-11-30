@@ -5,7 +5,9 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.PagerSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.SnapHelper;
 
 import com.example.andriod_project.R;
 import com.example.andriod_project.adapters.RecyclerSolutionAdapter;
@@ -41,6 +43,7 @@ public class RecyclerSolutionActivity extends AppCompatActivity {
 
         intent = getIntent();
         questionCategory = intent.getStringExtra("questionCategory");
+        System.out.println(questionCategory);
         userId = intent.getStringExtra("userId");
 
         // MySQL 접속 연동 정의 구현
@@ -51,7 +54,14 @@ public class RecyclerSolutionActivity extends AppCompatActivity {
         arrayQuestionList = new ArrayList<QuestionVO>();
 
         challengeModeSolution = findViewById(R.id.solutionRecyclerView);
+        challengeModeSolution.setHasFixedSize(true);
         challengeModeSolution.setLayoutManager(new LinearLayoutManager(RecyclerSolutionActivity.this, LinearLayoutManager.HORIZONTAL, false));
+        
+        // RecycclerView의 슬라이드를 ViewPager형식처럼 한 페이지씩 넘어가도록 하는 방법
+        SnapHelper snapHelper = new PagerSnapHelper();
+        snapHelper.attachToRecyclerView(challengeModeSolution);
+
+
 
         getQuestionData(questionCategory);
     }
@@ -63,10 +73,11 @@ public class RecyclerSolutionActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<ArrayList<QuestionVO>> call, Response<ArrayList<QuestionVO>> response) {
                 arrayQuestionList = response.body();
-                solutionAdapter = new RecyclerSolutionAdapter(getApplicationContext(), arrayQuestionList, userId);
                 // RecyclerView 정의
                 System.out.println(arrayQuestionList.size());
+                solutionAdapter = new RecyclerSolutionAdapter(getApplicationContext(), arrayQuestionList, userId);
                 challengeModeSolution.setAdapter(solutionAdapter);
+
             }
             @Override
             public void onFailure(Call<ArrayList<QuestionVO>> call, Throwable t) { }
