@@ -20,6 +20,7 @@
 
         <ImageView
             android:id="@+id/profileImgVIew"
+            android:onClick="studyModeQuestionButtonSystem"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginLeft="10dp"
@@ -31,6 +32,7 @@
 
         <TextView
             android:id="@+id/userNicknameTxtView"
+            android:onClick="studyModeQuestionButtonSystem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
@@ -52,6 +54,7 @@
 
         <ImageButton
             android:id="@+id/rankBtn"
+            android:onClick="studyModeQuestionButtonSystem"
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
@@ -83,6 +86,7 @@
 
         <ImageView
             android:id="@+id/back"
+            android:onClick="studyModeQuestionButtonSystem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -90,6 +94,7 @@
 
         <ImageView
             android:id="@+id/home"
+            android:onClick="studyModeQuestionButtonSystem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
@@ -116,7 +121,7 @@
                 android:layout_gravity="left"
                 android:layout_margin="5dp"
                 android:padding="5dp"
-                android:text="도전 모드"
+                android:text="학습 모드"
                 android:textColor="#FFFFFF"
                 android:textSize="20dp"
                 tools:layout_editor_absoluteY="120dp" />
@@ -133,102 +138,112 @@
 
             <ImageButton
                 android:id="@+id/ComputerBtn"
+                android:onClick="studyModeQuestionButtonSystem"
                 android:layout_width="150dp"
                 android:layout_height="75dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/computer"
                 android:padding="10dp"
-                android:text="컴퓨터"
+                android:text="computer"
                 android:textSize="20dp" />
 
             <ImageButton
                 android:id="@+id/CurrentEventBtn"
+                android:onClick="studyModeQuestionButtonSystem"
                 android:layout_width="150dp"
                 android:layout_height="75dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/currentevent"
                 android:padding="10dp"
-                android:text="시사"
+                android:text="currentevents"
                 android:textSize="20dp" />
 
             <ImageButton
                 android:id="@+id/IdiomBtn"
+                android:onClick="studyModeQuestionButtonSystem"
                 android:layout_width="150dp"
                 android:layout_height="75dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/idiom"
                 android:padding="10dp"
-                android:text="사자성어"
+                android:text="idiom"
                 android:textSize="20dp" />
 
             <ImageButton
                 android:id="@+id/IndustrialRevolutionBtn"
+                android:onClick="studyModeQuestionButtonSystem"
                 android:layout_width="150dp"
                 android:layout_height="75dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/industrialrevolution"
                 android:padding="10dp"
-                android:text="4차 산업혁명"
+                android:text="industrialrevolution"
                 android:textSize="20dp" />
 
             <ImageButton
                 android:id="@+id/NeologismBtn"
+                android:onClick="studyModeQuestionButtonSystem"
                 android:layout_width="150dp"
                 android:layout_height="75dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/neologism"
                 android:padding="10dp"
-                android:text="신조어"
+                android:text="neologism"
                 android:textSize="20dp" />
 
             <ImageButton
                 android:id="@+id/PeripheralBtn"
+                android:onClick="studyModeQuestionButtonSystem"
                 android:layout_width="150dp"
                 android:layout_height="75dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/peripheral"
                 android:padding="10dp"
-                android:text="주변기기"
+                android:text="peripheral"
                 android:textSize="20dp" />
 
             <ImageButton
                 android:id="@+id/PhilosophyBtn"
+                android:onClick="studyModeQuestionButtonSystem"
                 android:layout_width="150dp"
                 android:layout_height="75dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/philosophy"
                 android:padding="10dp"
-                android:text="철학"
+                android:text="philosophy"
                 android:textSize="20dp" />
 
             <ImageButton
                 android:id="@+id/PsychologyBtn"
+                android:onClick="studyModeQuestionButtonSystem"
                 android:layout_width="150dp"
                 android:layout_height="75dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/psychology"
                 android:padding="10dp"
-                android:text="심리학"
+                android:text="psychology"
                 android:textSize="20dp" />
 
             <ImageButton
                 android:id="@+id/ReligionBtn"
+                android:onClick="studyModeQuestionButtonSystem"
                 android:layout_width="150dp"
                 android:layout_height="75dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/religion"
                 android:padding="10dp"
-                android:text="종교학"
+                android:text="religion"
                 android:textSize="20dp" />
 
             <ImageButton
                 android:id="@+id/ScienceBtn"
+                android:onClick="studyModeQuestionButtonSystem"
                 android:layout_width="150dp"
                 android:layout_height="75dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/science"
                 android:padding="10dp"
-                android:text="순수 과학"
+                android:text="science"
                 android:textSize="20dp" />
 
         </LinearLayout>
