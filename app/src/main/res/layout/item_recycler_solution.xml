@@ -14,7 +14,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:background="@drawable/blue"
             android:orientation="vertical">
 
@@ -135,7 +135,7 @@
                 android:text="nextQuestion" />
 
             <ImageButton
-                android:id="@+id/backBtn"
+                android:id="@+id/backToModeBtn"
                 android:layout_width="200dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center_horizontal"

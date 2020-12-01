@@ -71,7 +71,7 @@ public class ChallengeModeActivity extends AppCompatActivity {
 
         //뷰페이저 설정
         viewPager = (ViewPager) findViewById(R.id.view);
-        adapter = new ChallengeModeAdapter(this, userId);
+        adapter = new ChallengeModeAdapter(this, userId, userRankPoint, userSolveProblem, userCorrectProblem);
         viewPager.setAdapter(adapter);
 
         // 유저 정보 팝업 윈도우에 정보 세팅

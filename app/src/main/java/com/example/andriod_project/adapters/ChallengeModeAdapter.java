@@ -24,10 +24,17 @@ public class ChallengeModeAdapter extends PagerAdapter {
     private LayoutInflater inflater;
     private Context context;
     private String userId;
+    private int userRankPoint;
+    private int userSolveProblem;
+    private int userCorrectProblem;
 
-    public ChallengeModeAdapter(Context context, String userId) {
+    public ChallengeModeAdapter(Context context, String userId, int userRankPoint, int userSolveProblem, int userCorrectProblem) {
         this.context = context;
         this.userId = userId;
+        this.userRankPoint = userRankPoint;
+        this.userSolveProblem = userSolveProblem;
+        this.userCorrectProblem = userCorrectProblem;
+        System.out.println("" + userId + "/" + userRankPoint + "/" + userSolveProblem + "/" + "/"+ userCorrectProblem);
     }
 
     //이미지 배열 총 갯수
@@ -79,6 +86,9 @@ public class ChallengeModeAdapter extends PagerAdapter {
                         intent = new Intent(context, RecyclerSolutionActivity.class);
                         intent.putExtra("questionCategory", questionCategory);
                         intent.putExtra("userId", userId);
+                        intent.putExtra("userRankPoint", userRankPoint);
+                        intent.putExtra("userSolveProblem", userSolveProblem);
+                        intent.putExtra("userCorrectProblem", userCorrectProblem);
                         context.startActivity(intent);
                         break;
                     case 1:
@@ -86,6 +96,9 @@ public class ChallengeModeAdapter extends PagerAdapter {
                         intent = new Intent(context, RecyclerSolutionActivity.class);
                         intent.putExtra("questionCategory", questionCategory);
                         intent.putExtra("userId", userId);
+                        intent.putExtra("userRankPoint", userRankPoint);
+                        intent.putExtra("userSolveProblem", userSolveProblem);
+                        intent.putExtra("userCorrectProblem", userCorrectProblem);
                         context.startActivity(intent);
                         break;
                     case 2:
@@ -93,6 +106,9 @@ public class ChallengeModeAdapter extends PagerAdapter {
                         intent = new Intent(context, RecyclerSolutionActivity.class);
                         intent.putExtra("questionCategory", questionCategory);
                         intent.putExtra("userId", userId);
+                        intent.putExtra("userRankPoint", userRankPoint);
+                        intent.putExtra("userSolveProblem", userSolveProblem);
+                        intent.putExtra("userCorrectProblem", userCorrectProblem);
                         context.startActivity(intent);
                         break;
                     default:

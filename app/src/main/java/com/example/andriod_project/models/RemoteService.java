@@ -35,5 +35,5 @@ public interface RemoteService {
     Call<UserVO> saveStoryModeData(@Query("userstorymodelevel") String userstorymodelevel, @Query("userstorymodestage") int userstorymodestage, @Query("userid") String userid);
 
     @POST("savechallengemodedata.jsp")
-    Call<UserVO> saveChallengeModeData(@Query("userrankpoint") int userrankpoint, @Query("usersolveproblem") int usersolveproblem, @Query("usercorrectproblem") int usercorrectproblem, @Query("userid") String userid);
+    Call<UserVO> saveChallengeMode(@Query("userrankpoint") int userrankpoint, @Query("usersolveproblem") int usersolveproblem, @Query("usercorrectproblem") int usercorrectproblem, @Query("userid") String userid);
 }

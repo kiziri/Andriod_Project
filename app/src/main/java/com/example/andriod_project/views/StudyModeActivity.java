@@ -63,7 +63,7 @@ public class StudyModeActivity extends AppCompatActivity {
 
         //뷰페이저 설정
         viewPager = (ViewPager) findViewById(R.id.view);
-        adapter = new StudyModeAdapter(this);
+        adapter = new StudyModeAdapter(this, userId);
         viewPager.setAdapter(adapter);
 
         // 이전 페이지 intent 데이터 읽어드리기

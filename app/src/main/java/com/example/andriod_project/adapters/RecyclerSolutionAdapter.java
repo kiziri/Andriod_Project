@@ -2,8 +2,8 @@ package com.example.andriod_project.adapters;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Color;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,17 +14,16 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.andriod_project.R;
 import com.example.andriod_project.models.QuestionVO;
 import com.example.andriod_project.models.RemoteService;
 import com.example.andriod_project.models.UserVO;
-import com.example.andriod_project.views.ChallengeModeActivity;
 import com.example.andriod_project.views.RecyclerSolutionActivity;
-import com.example.andriod_project.views.StoryModeActivity;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import retrofit2.Call;
@@ -39,16 +38,26 @@ public class RecyclerSolutionAdapter extends RecyclerView.Adapter<RecyclerSoluti
     Context context;
     ArrayList<QuestionVO> arrayQuestionList = null;
     String getUserId;
-    int setSolveProblem = 0;
-    int setCorrectProblem = 0;
-    int setRankPoint = 0;
+    int userRankPoint = 0;
+    int userSolveProblem = 0;
+    int userCorrectProblem = 0;
+    View view;
 
+    Retrofit retrofit = new Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create()).build();
+    RemoteService remoteService = retrofit.create(RemoteService.class);
 
+    public RecyclerSolutionAdapter() {
+    }
 
-    public RecyclerSolutionAdapter(Context context, ArrayList<QuestionVO> arrayQuestionList, String getUserId) {
+    public RecyclerSolutionAdapter(Context context, ArrayList<QuestionVO> arrayQuestionList, String getUserId, int userRankPoint, int userSolveProblem, int userCorrectProblem) {
         this.context = context;
         this.arrayQuestionList = arrayQuestionList;
         this.getUserId = getUserId;
+        this.userRankPoint = userRankPoint;
+        this.userSolveProblem = userSolveProblem;
+        this.userCorrectProblem = userCorrectProblem;
+        System.out.println(getUserId + " / " + this.getUserId + " / " + userRankPoint + " / " + this.userRankPoint + " / " + userSolveProblem + " / " + this.userSolveProblem + " / "
+                            + userCorrectProblem + " / " + this.userCorrectProblem);
     }
 
     @Override
@@ -59,7 +68,8 @@ public class RecyclerSolutionAdapter extends RecyclerView.Adapter<RecyclerSoluti
 
     @Override
     public RecyclerSolutionAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_recycler_solution, parent, false);
+        view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_recycler_solution, parent, false);
+        context = parent.getContext();
         return new ViewHolder(view);
     }
 
@@ -82,12 +92,13 @@ public class RecyclerSolutionAdapter extends RecyclerView.Adapter<RecyclerSoluti
         holder.summaryText.setVisibility(View.GONE);
         holder.detailText.setVisibility(View.GONE);
         holder.nextQuestion.setVisibility(View.GONE);
-        holder.backBtn.setVisibility(View.GONE);
+        holder.backToModeBtn.setVisibility(View.GONE);
 
 
         holder.selectionRadioG.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
+                view.setNestedScrollingEnabled(false);
                 holder.exSummary.setVisibility(View.VISIBLE);
                 holder.exDetail.setVisibility(View.VISIBLE);
                 holder.selectionRadio1.setEnabled(false);
@@ -99,56 +110,56 @@ public class RecyclerSolutionAdapter extends RecyclerView.Adapter<RecyclerSoluti
                         if (questionAnswer == 1) {
                             holder.selectionRadio1.setTextColor(Color.GREEN);
                             holder.nextQuestion.setVisibility(View.VISIBLE);
-                            setSolveProblem += 1;
-                            setCorrectProblem += 1;
-                            setRankPoint += 1;
+                            userRankPoint++;
+                            userSolveProblem++;
+                            userCorrectProblem++;
                         }
                         else {
                             holder.selectionRadio1.setTextColor(Color.RED);
-                            holder.backBtn.setVisibility(View.VISIBLE);
-                            setSolveProblem += 1;
+                            holder.backToModeBtn.setVisibility(View.VISIBLE);
+                            userSolveProblem++;
                         }
                         break;
                     case R.id.selectionRadio2 :
                         if (questionAnswer == 2) {
                             holder.selectionRadio2.setTextColor(Color.GREEN);
                             holder.nextQuestion.setVisibility(View.VISIBLE);
-                            setSolveProblem += 1;
-                            setCorrectProblem += 1;
-                            setRankPoint += 1;
+                            userRankPoint++;
+                            userSolveProblem++;
+                            userCorrectProblem++;
                         }
                         else {
                             holder.selectionRadio2.setTextColor(Color.RED);
-                            holder.backBtn.setVisibility(View.VISIBLE);
-                            setSolveProblem += 1;
+                            holder.backToModeBtn.setVisibility(View.VISIBLE);
+                            userSolveProblem++;
                         }
                         break;
                     case R.id.selectionRadio3 :
                         if (questionAnswer == 3) {
                             holder.selectionRadio3.setTextColor(Color.GREEN);
                             holder.nextQuestion.setVisibility(View.VISIBLE);
-                            setSolveProblem += 1;
-                            setCorrectProblem += 1;
-                            setRankPoint += 1;
+                            userRankPoint++;
+                            userSolveProblem++;
+                            userCorrectProblem++;
                         }
                         else {
                             holder.selectionRadio3.setTextColor(Color.RED);
-                            holder.backBtn.setVisibility(View.VISIBLE);
-                            setSolveProblem += 1;
+                            holder.backToModeBtn.setVisibility(View.VISIBLE);
+                            userSolveProblem++;
                         }
                         break;
                     case R.id.selectionRadio4 :
                         if (questionAnswer == 4) {
                             holder.selectionRadio4.setTextColor(Color.GREEN);
                             holder.nextQuestion.setVisibility(View.VISIBLE);
-                            setSolveProblem += 1;
-                            setCorrectProblem += 1;
-                            setRankPoint += 1;
+                            userRankPoint++;
+                            userSolveProblem++;
+                            userCorrectProblem++;
                         }
                         else {
                             holder.selectionRadio4.setTextColor(Color.RED);
-                            holder.backBtn.setVisibility(View.VISIBLE);
-                            setSolveProblem += 1;
+                            holder.backToModeBtn.setVisibility(View.VISIBLE);
+                            userSolveProblem++;
                         }
                         break;
                 }
@@ -183,45 +194,46 @@ public class RecyclerSolutionAdapter extends RecyclerView.Adapter<RecyclerSoluti
         holder.nextQuestion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                holder.selectionRadio1.setChecked(false);
-                holder.selectionRadio2.setChecked(false);
-                holder.selectionRadio3.setChecked(false);
-                holder.selectionRadio4.setChecked(false);
+                int getpos = holder.getAdapterPosition();
+
+                holder.selectionRadioG.clearCheck();
                 holder.selectionRadio1.setEnabled(true);
                 holder.selectionRadio2.setEnabled(true);
                 holder.selectionRadio3.setEnabled(true);
                 holder.selectionRadio4.setEnabled(true);
+                holder.selectionRadio1.setTextColor(Color.WHITE);
+                holder.selectionRadio2.setTextColor(Color.WHITE);
+                holder.selectionRadio3.setTextColor(Color.WHITE);
+                holder.selectionRadio4.setTextColor(Color.WHITE);
             }
         });
 
-        // 문제를 틀려, 화면을 되돌아가며 도전모드에 대한 데이터를 저장하는 이벤트 리스너 구현부
-        holder.backBtn.setOnClickListener(new View.OnClickListener() {
+        holder.backToModeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Retrofit retrofit;
-                RemoteService remoteService;
+                UserVO userVO = new UserVO();
+                userVO.setUserrankpoint(userRankPoint);
+                userVO.setUsersolveproblem(userSolveProblem);
+                userVO.setUsercorrectproblem(userCorrectProblem);
+                userVO.setUserid(getUserId);
 
-                retrofit = new Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create()).build();
-                remoteService = retrofit.create(RemoteService.class);
-
-                Call<UserVO> call = remoteService.saveChallengeModeData(setRankPoint, setSolveProblem, setCorrectProblem, getUserId);
+                System.out.println(userRankPoint + " / " + userSolveProblem + " / " + userCorrectProblem + " / " + getUserId);
+                Call<UserVO> call = remoteService.saveChallengeMode(userVO.getUserrankpoint(), userVO.getUsersolveproblem(), userVO.getUsercorrectproblem(), userVO.getUserid());
                 call.enqueue(new Callback<UserVO>() {
                     @Override
                     public void onResponse(Call<UserVO> call, Response<UserVO> response) {
+                        System.out.println(response.code());
+                        Log.d("Test", response.body().toString());
                         System.out.println("-------------도전 모드 데이터 저장 완료\n");
+                        System.out.println(userRankPoint + " / " + userSolveProblem + " / " + userCorrectProblem + " / " + getUserId);
                     }
                     @Override
                     public void onFailure(Call<UserVO> call, Throwable t) { }
                 });
+                ((Activity)context).finish();
             }
         });
 
-        holder.backBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
@@ -229,7 +241,7 @@ public class RecyclerSolutionAdapter extends RecyclerView.Adapter<RecyclerSoluti
         Button exSummary, exDetail;
         RadioGroup selectionRadioG;
         RadioButton selectionRadio1, selectionRadio2, selectionRadio3, selectionRadio4;
-        ImageButton nextQuestion, backBtn;
+        ImageButton nextQuestion, backToModeBtn;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -244,8 +256,8 @@ public class RecyclerSolutionAdapter extends RecyclerView.Adapter<RecyclerSoluti
             selectionRadio3 = itemView.findViewById(R.id.selectionRadio3);
             selectionRadio4 = itemView.findViewById(R.id.selectionRadio4);
             nextQuestion = itemView.findViewById(R.id.nextQuestionBtn);
-            backBtn = itemView.findViewById(R.id.backBtn);
+            backToModeBtn = itemView.findViewById(R.id.backToModeBtn);
+
         }
     }
-
 }

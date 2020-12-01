@@ -35,6 +35,7 @@ public class RecyclerSolutionActivity extends AppCompatActivity {
 
     Intent intent;
     String questionCategory, userId;
+    int userRankPoint, userSolveProblem, userCorrectProblem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +46,10 @@ public class RecyclerSolutionActivity extends AppCompatActivity {
         questionCategory = intent.getStringExtra("questionCategory");
         System.out.println(questionCategory);
         userId = intent.getStringExtra("userId");
+        userRankPoint = intent.getIntExtra("userRankPoint", 0);
+        userSolveProblem = intent.getIntExtra("userSolveProblem", 0);
+        userCorrectProblem = intent.getIntExtra("userCorrectProblem", 0);
+        System.out.println(userRankPoint + "/ " + userSolveProblem + "/ " + userCorrectProblem);
 
         // MySQL 접속 연동 정의 구현
         retrofit = new Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create()).build();
@@ -55,13 +60,14 @@ public class RecyclerSolutionActivity extends AppCompatActivity {
 
         challengeModeSolution = findViewById(R.id.solutionRecyclerView);
         challengeModeSolution.setHasFixedSize(true);
+        challengeModeSolution.setNestedScrollingEnabled(false);
         challengeModeSolution.setLayoutManager(new LinearLayoutManager(RecyclerSolutionActivity.this, LinearLayoutManager.HORIZONTAL, false));
-        
+        solutionAdapter = new RecyclerSolutionAdapter(getApplicationContext(), arrayQuestionList, userId, userRankPoint, userSolveProblem, userCorrectProblem);
+        challengeModeSolution.setAdapter(solutionAdapter);
+
         // RecycclerView의 슬라이드를 ViewPager형식처럼 한 페이지씩 넘어가도록 하는 방법
         SnapHelper snapHelper = new PagerSnapHelper();
         snapHelper.attachToRecyclerView(challengeModeSolution);
-
-
 
         getQuestionData(questionCategory);
     }
@@ -72,15 +78,15 @@ public class RecyclerSolutionActivity extends AppCompatActivity {
         call.enqueue(new Callback<ArrayList<QuestionVO>>() {
             @Override
             public void onResponse(Call<ArrayList<QuestionVO>> call, Response<ArrayList<QuestionVO>> response) {
-                arrayQuestionList = response.body();
+                arrayQuestionList.addAll(response.body());
                 // RecyclerView 정의
                 System.out.println(arrayQuestionList.size());
-                solutionAdapter = new RecyclerSolutionAdapter(getApplicationContext(), arrayQuestionList, userId);
-                challengeModeSolution.setAdapter(solutionAdapter);
-
+                solutionAdapter.notifyDataSetChanged();
             }
             @Override
             public void onFailure(Call<ArrayList<QuestionVO>> call, Throwable t) { }
         });
     }
+
+
 }
