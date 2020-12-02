@@ -120,9 +120,14 @@ public class ChallengeModeActivity extends AppCompatActivity {
                 onStop();
                 break;
             case R.id.backBtn :
-            case R.id.homeBtn :
                 finish();
                 break;
+            case R.id.homeBtn :
+                intent = new Intent(ChallengeModeActivity.this, MainHomeActivity.class);
+                startActivity(intent);
+                finish();
+                break;
+
         }
     }
 }

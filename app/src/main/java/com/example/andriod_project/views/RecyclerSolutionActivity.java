@@ -2,6 +2,7 @@ package com.example.andriod_project.views;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -70,6 +71,13 @@ public class RecyclerSolutionActivity extends AppCompatActivity {
         snapHelper.attachToRecyclerView(challengeModeSolution);
 
         getQuestionData(questionCategory);
+
+        solutionAdapter.setOnItemClickListener(new RecyclerSolutionAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View v, int position) {
+                challengeModeSolution.scrollToPosition(position+1);
+            }
+        });
     }
 
     public void getQuestionData(String questionCategory) {

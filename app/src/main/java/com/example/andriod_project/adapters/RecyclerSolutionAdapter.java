@@ -42,11 +42,20 @@ public class RecyclerSolutionAdapter extends RecyclerView.Adapter<RecyclerSoluti
     int userSolveProblem = 0;
     int userCorrectProblem = 0;
     View view;
+    private OnItemClickListener onItemClickListener = null;
+
+    public interface OnItemClickListener {
+        void onItemClick(View v, int position);
+    }
 
     Retrofit retrofit = new Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create()).build();
     RemoteService remoteService = retrofit.create(RemoteService.class);
 
     public RecyclerSolutionAdapter() {
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.onItemClickListener = listener;
     }
 
     public RecyclerSolutionAdapter(Context context, ArrayList<QuestionVO> arrayQuestionList, String getUserId, int userRankPoint, int userSolveProblem, int userCorrectProblem) {
@@ -258,6 +267,17 @@ public class RecyclerSolutionAdapter extends RecyclerView.Adapter<RecyclerSoluti
             nextQuestion = itemView.findViewById(R.id.nextQuestionBtn);
             backToModeBtn = itemView.findViewById(R.id.backToModeBtn);
 
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int pos = getAdapterPosition();
+                    if (pos != RecyclerView.NO_POSITION) {
+                        if (onItemClickListener != null) {
+                            onItemClickListener.onItemClick(v, pos);
+                        }
+                    }
+                }
+            });
         }
     }
 }
