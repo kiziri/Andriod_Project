@@ -214,6 +214,7 @@ public class RecyclerSolutionAdapter extends RecyclerView.Adapter<RecyclerSoluti
                 holder.selectionRadio2.setTextColor(Color.WHITE);
                 holder.selectionRadio3.setTextColor(Color.WHITE);
                 holder.selectionRadio4.setTextColor(Color.WHITE);
+                onItemClickListener.onItemClick(v, getpos);
             }
         });
 
@@ -266,18 +267,6 @@ public class RecyclerSolutionAdapter extends RecyclerView.Adapter<RecyclerSoluti
             selectionRadio4 = itemView.findViewById(R.id.selectionRadio4);
             nextQuestion = itemView.findViewById(R.id.nextQuestionBtn);
             backToModeBtn = itemView.findViewById(R.id.backToModeBtn);
-
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    int pos = getAdapterPosition();
-                    if (pos != RecyclerView.NO_POSITION) {
-                        if (onItemClickListener != null) {
-                            onItemClickListener.onItemClick(v, pos);
-                        }
-                    }
-                }
-            });
         }
     }
 }
