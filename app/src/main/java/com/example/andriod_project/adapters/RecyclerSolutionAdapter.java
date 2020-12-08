@@ -107,6 +107,7 @@ public class RecyclerSolutionAdapter extends RecyclerView.Adapter<RecyclerSoluti
         holder.selectionRadioG.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
+                int getPosition = holder.getAdapterPosition();
                 view.setNestedScrollingEnabled(false);
                 holder.exSummary.setVisibility(View.VISIBLE);
                 holder.exDetail.setVisibility(View.VISIBLE);
@@ -118,10 +119,16 @@ public class RecyclerSolutionAdapter extends RecyclerView.Adapter<RecyclerSoluti
                     case R.id.selectionRadio1 :
                         if (questionAnswer == 1) {
                             holder.selectionRadio1.setTextColor(Color.GREEN);
-                            holder.nextQuestion.setVisibility(View.VISIBLE);
                             userRankPoint++;
                             userSolveProblem++;
                             userCorrectProblem++;
+
+                            if (checkFinalQuestion(getPosition) != true) {
+                                holder.nextQuestion.setVisibility(View.VISIBLE);
+                            }
+                            else {
+                                holder.backToModeBtn.setVisibility(View.VISIBLE);
+                            }
                         }
                         else {
                             holder.selectionRadio1.setTextColor(Color.RED);
@@ -132,10 +139,16 @@ public class RecyclerSolutionAdapter extends RecyclerView.Adapter<RecyclerSoluti
                     case R.id.selectionRadio2 :
                         if (questionAnswer == 2) {
                             holder.selectionRadio2.setTextColor(Color.GREEN);
-                            holder.nextQuestion.setVisibility(View.VISIBLE);
                             userRankPoint++;
                             userSolveProblem++;
                             userCorrectProblem++;
+
+                            if (checkFinalQuestion(getPosition) != true) {
+                                holder.nextQuestion.setVisibility(View.VISIBLE);
+                            }
+                            else {
+                                holder.backToModeBtn.setVisibility(View.VISIBLE);
+                            }
                         }
                         else {
                             holder.selectionRadio2.setTextColor(Color.RED);
@@ -146,10 +159,16 @@ public class RecyclerSolutionAdapter extends RecyclerView.Adapter<RecyclerSoluti
                     case R.id.selectionRadio3 :
                         if (questionAnswer == 3) {
                             holder.selectionRadio3.setTextColor(Color.GREEN);
-                            holder.nextQuestion.setVisibility(View.VISIBLE);
                             userRankPoint++;
                             userSolveProblem++;
                             userCorrectProblem++;
+
+                            if (checkFinalQuestion(getPosition) != true) {
+                                holder.nextQuestion.setVisibility(View.VISIBLE);
+                            }
+                            else {
+                                holder.backToModeBtn.setVisibility(View.VISIBLE);
+                            }
                         }
                         else {
                             holder.selectionRadio3.setTextColor(Color.RED);
@@ -160,10 +179,16 @@ public class RecyclerSolutionAdapter extends RecyclerView.Adapter<RecyclerSoluti
                     case R.id.selectionRadio4 :
                         if (questionAnswer == 4) {
                             holder.selectionRadio4.setTextColor(Color.GREEN);
-                            holder.nextQuestion.setVisibility(View.VISIBLE);
                             userRankPoint++;
                             userSolveProblem++;
                             userCorrectProblem++;
+
+                            if (checkFinalQuestion(getPosition) != true) {
+                                holder.nextQuestion.setVisibility(View.VISIBLE);
+                            }
+                            else {
+                                holder.backToModeBtn.setVisibility(View.VISIBLE);
+                            }
                         }
                         else {
                             holder.selectionRadio4.setTextColor(Color.RED);
@@ -172,7 +197,6 @@ public class RecyclerSolutionAdapter extends RecyclerView.Adapter<RecyclerSoluti
                         }
                         break;
                 }
-
             }
         });
 
@@ -203,7 +227,7 @@ public class RecyclerSolutionAdapter extends RecyclerView.Adapter<RecyclerSoluti
         holder.nextQuestion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int getpos = holder.getAdapterPosition();
+                int getPosition = holder.getAdapterPosition();
 
                 holder.selectionRadioG.clearCheck();
                 holder.selectionRadio1.setEnabled(true);
@@ -214,7 +238,7 @@ public class RecyclerSolutionAdapter extends RecyclerView.Adapter<RecyclerSoluti
                 holder.selectionRadio2.setTextColor(Color.WHITE);
                 holder.selectionRadio3.setTextColor(Color.WHITE);
                 holder.selectionRadio4.setTextColor(Color.WHITE);
-                onItemClickListener.onItemClick(v, getpos);
+                onItemClickListener.onItemClick(v, getPosition);
             }
         });
 
@@ -267,6 +291,17 @@ public class RecyclerSolutionAdapter extends RecyclerView.Adapter<RecyclerSoluti
             selectionRadio4 = itemView.findViewById(R.id.selectionRadio4);
             nextQuestion = itemView.findViewById(R.id.nextQuestionBtn);
             backToModeBtn = itemView.findViewById(R.id.backToModeBtn);
+        }
+    }
+
+    public boolean checkFinalQuestion(int getPosition) {
+        int getCount = getItemCount();
+
+        if (getPosition != getCount) {
+            return false;
+        }
+        else {
+            return true;
         }
     }
 }

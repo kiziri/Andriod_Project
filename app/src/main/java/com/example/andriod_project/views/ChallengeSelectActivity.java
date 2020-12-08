@@ -167,6 +167,12 @@ public class ChallengeSelectActivity extends AppCompatActivity {
                 break;
             case R.id.home :
                 intent = new Intent(ChallengeSelectActivity.this, MainHomeActivity.class);
+                intent.putExtra("userId", userId);
+                intent.putExtra("userName", userName);
+                intent.putExtra("userNickname", userNickname);
+                intent.putExtra("userRankPoint", userRankPoint);
+                intent.putExtra("userSolveProblem", userSolveProblem);
+                intent.putExtra("userCorrectProblem", userCorrectProblem);
                 startActivity(intent);
                 finish();
                 break;

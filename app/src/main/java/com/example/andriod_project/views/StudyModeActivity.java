@@ -119,8 +119,18 @@ public class StudyModeActivity extends AppCompatActivity {
                 userInfoPopup.showAtLocation(popupConstraint, Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL, 0, 0);
                 userInfoPopup.setAnimationStyle(-1);
                 break;
-            case R.id.backBtn :
-            case R.id.homeBtn :
+            case R.id.back :
+                finish();
+                break;
+            case R.id.home :
+                intent = new Intent(StudyModeActivity.this, MainHomeActivity.class);
+                intent.putExtra("userId", userId);
+                intent.putExtra("userName", userName);
+                intent.putExtra("userNickname", userNickname);
+                intent.putExtra("userRankPoint", userRankPoint);
+                intent.putExtra("userSolveProblem", userSolveProblem);
+                intent.putExtra("userCorrectProblem", userCorrectProblem);
+                startActivity(intent);
                 finish();
                 break;
             case R.id.rankBtn :

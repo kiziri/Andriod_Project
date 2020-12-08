@@ -119,11 +119,17 @@ public class ChallengeModeActivity extends AppCompatActivity {
                 startActivity(intent);
                 onStop();
                 break;
-            case R.id.backBtn :
+            case R.id.back :
                 finish();
                 break;
-            case R.id.homeBtn :
+            case R.id.home :
                 intent = new Intent(ChallengeModeActivity.this, MainHomeActivity.class);
+                intent.putExtra("userId", userId);
+                intent.putExtra("userName", userName);
+                intent.putExtra("userNickname", userNickname);
+                intent.putExtra("userRankPoint", userRankPoint);
+                intent.putExtra("userSolveProblem", userSolveProblem);
+                intent.putExtra("userCorrectProblem", userCorrectProblem);
                 startActivity(intent);
                 finish();
                 break;
