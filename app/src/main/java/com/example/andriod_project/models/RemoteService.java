@@ -9,7 +9,7 @@ import retrofit2.http.POST;
 import retrofit2.http.Query;
 
 public interface RemoteService {
-    public static final String BASE_URL="http://1.247.180.181:8080/quizApp/";
+    public static final String BASE_URL="";
 
     @POST("insertUser.jsp")
     Call<Void> insertUser(@Query("userid") String userid, @Query("userpw") String userpw, @Query("username") String username, @Query("usernickname") String usernickname,
